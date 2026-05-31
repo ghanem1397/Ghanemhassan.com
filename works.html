@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Works for Sale — Ghanem Hassan</title>
-  <meta name="description" content="Original paintings by Ghanem Hassan. Mixed media on canvas. Available for collectors." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Original paintings by Ghanem Hassan. Mixed media on canvas with diamonds and emeralds. Available for collectors worldwide."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
   <nav class="nav" id="nav">
     <a href="index.html" class="nav__logo">GHANEM HASSAN</a>
-    <button class="nav__toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span>
-    </button>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span></button>
     <ul class="nav__links" id="navLinks">
       <li><a href="works.html" class="active">Works for Sale</a></li>
       <li><a href="about.html">About</a></li>
@@ -27,120 +25,526 @@
   </nav>
 
   <header class="page-header">
-    <p class="section-label">Original Paintings</p>
+    <p class="section-label">Original Paintings · Mixed Media on Canvas</p>
     <h1 class="page-header__title">Works for Sale</h1>
-    <p class="page-header__sub">Each work is original. One of a kind. Built by hand in Milan.</p>
+    <p class="page-header__sub">Each work is original. One of a kind. Built by hand in Milan.<br>Diamonds and emeralds embedded into the surface — not as decoration, but as memory made material.</p>
   </header>
 
-  <section class="works-full">
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All Works</button>
+    <button class="filter-btn" data-filter="available">Available</button>
+    <button class="filter-btn" data-filter="sold">Sold</button>
+  </div>
 
-    <article class="work-detail">
-      <div class="work-detail__img-wrap">
-        <div class="work-detail__placeholder">
-          <div class="work-detail__placeholder-inner">
-            <span>Skin of Silence</span>
-          </div>
+  <!-- WORKS GRID -->
+  <section class="works-catalog">
+
+    <article class="wc-card" data-status="available">
+      <a href="work-skin-of-silence.html" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/72cfdfa2-8f9d-4bd2-a2fd-49848d30dcce.jpg?v=1768308560" alt="Skin of Silence" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Skin of Silence</h3>
+          <span class="status available">Available</span>
         </div>
-      </div>
-      <div class="work-detail__content">
-        <div class="work-detail__header">
-          <h2 class="work-detail__title">Skin of Silence</h2>
-          <span class="work-card__status available">Available</span>
-        </div>
-        <p class="work-detail__year">2024</p>
-        <p class="work-detail__desc">
-          A grid fractured by a diagonal wound — each cell holding its own quiet weight. 
-          This work began as a question about what we carry across borders, what survives 
-          displacement, and what hardens into silence. The single white spark at the 
-          intersection is not hope. It is the memory of choosing to continue.
-        </p>
-        <div class="work-detail__meta">
-          <span>Mixed media on canvas</span>
-          <span class="work-detail__divider">·</span>
-          <span>Contact for dimensions</span>
-        </div>
-        <div class="work-detail__price-row">
-          <span class="work-detail__price">Price on request</span>
-        </div>
-        <a href="contact.html?work=skin-of-silence" class="btn btn--gold">Interested in this work? Write to Ghanem →</a>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 26,500</p>
+        <a href="contact.html?work=Skin+of+Silence" class="btn btn--gold btn--sm">Inquire →</a>
       </div>
     </article>
 
-    <article class="work-detail work-detail--reverse">
-      <div class="work-detail__img-wrap">
-        <div class="work-detail__placeholder" style="background: linear-gradient(135deg, #1a1208 0%, #2d2210 60%, #0d0d0d 100%);">
-          <div class="work-detail__placeholder-inner">
-            <span>Untitled I</span>
-          </div>
+    <article class="wc-card" data-status="available">
+      <a href="work-script-of-the-displaced.html" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/d4d3960a-ec28-40ba-94c0-c49b265fcb99.jpg?v=1768308534" alt="Script of the Displaced" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Script of the Displaced</h3>
+          <span class="status available">Available</span>
         </div>
-      </div>
-      <div class="work-detail__content">
-        <div class="work-detail__header">
-          <h2 class="work-detail__title">Untitled I</h2>
-          <span class="work-card__status available">Available</span>
-        </div>
-        <p class="work-detail__year">2024</p>
-        <p class="work-detail__desc">
-          Dense layered surface threaded with gold veins through a dark ground. 
-          Calcified wounds becoming structure. The question this work asks is not 
-          whether to stay or go — it is what the staying costs, and what it builds.
-        </p>
-        <div class="work-detail__meta">
-          <span>Mixed media on canvas</span>
-          <span class="work-detail__divider">·</span>
-          <span>Contact for dimensions</span>
-        </div>
-        <div class="work-detail__price-row">
-          <span class="work-detail__price">Price on request</span>
-        </div>
-        <a href="contact.html?work=untitled-i" class="btn btn--gold">Interested in this work? Write to Ghanem →</a>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 18,300</p>
+        <a href="contact.html?work=Script+of+the+Displaced" class="btn btn--gold btn--sm">Inquire →</a>
       </div>
     </article>
 
-    <article class="work-detail">
-      <div class="work-detail__img-wrap">
-        <div class="work-detail__placeholder" style="background: linear-gradient(160deg, #0a0f0a 0%, #111a11 50%, #0d0d0d 100%);">
-          <div class="work-detail__placeholder-inner">
-            <span>The Weight</span>
-          </div>
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/0cdf087b-93db-42c7-b124-5d745946d496.jpg?v=1768308812" alt="The Will to Rebuild" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">The Will to Rebuild</h3>
+          <span class="status available">Available</span>
         </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 16,100</p>
+        <a href="contact.html?work=The+Will+to+Rebuild" class="btn btn--gold btn--sm">Inquire →</a>
       </div>
-      <div class="work-detail__content">
-        <div class="work-detail__header">
-          <h2 class="work-detail__title">The Weight</h2>
-          <span class="work-card__status available">Available</span>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/36022fa8-5c42-4826-8d55-414b53f16b4c.jpg?v=1768308707" alt="The Memory Beneath" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">The Memory Beneath</h3>
+          <span class="status available">Available</span>
         </div>
-        <p class="work-detail__year">2024</p>
-        <p class="work-detail__desc">
-          Heavy texture. Geological layers built up over months. 
-          There is a language the body speaks when the mind goes quiet — 
-          this canvas holds three years of that language. 
-          What the surface carries cannot be photographed. It must be stood before.
-        </p>
-        <div class="work-detail__meta">
-          <span>Mixed media on canvas</span>
-          <span class="work-detail__divider">·</span>
-          <span>Contact for dimensions</span>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 13,300</p>
+        <a href="contact.html?work=The+Memory+Beneath" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/42a160ba-0009-4642-95a1-df0de19da155.jpg?v=1768308618" alt="Suspended Dreams" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Suspended Dreams</h3>
+          <span class="status available">Available</span>
         </div>
-        <div class="work-detail__price-row">
-          <span class="work-detail__price">Price on request</span>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 10,300</p>
+        <a href="contact.html?work=Suspended+Dreams" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/WhatsApp_Image_2025-06-14_at_12.36.44_PM.jpg?v=1749897608" alt="The Healing Wound" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">The Healing Wound</h3>
+          <span class="status available">Available</span>
         </div>
-        <a href="contact.html?work=the-weight" class="btn btn--gold">Interested in this work? Write to Ghanem →</a>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 10,200</p>
+        <a href="contact.html?work=The+Healing+Wound" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/Ghanem-Hassan-Gilded_20Tale_20241210184835896_41e99260-9f5f-4b61-8a5d-4fc9555c36e2.jpg?v=1733991578" alt="Gilded Tale" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Gilded Tale</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 9,800</p>
+        <a href="contact.html?work=Gilded+Tale" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/f94c72a1-de47-4def-8821-2b961dd2eb27.jpg?v=1768308671" alt="The Hearth of Sacrifice" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">The Hearth of Sacrifice</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 9,600</p>
+        <a href="contact.html?work=The+Hearth+of+Sacrifice" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/c2f80d28-ee2f-44d7-b6b9-e48f5859aeed.jpg?v=1768308761" alt="The Weight of Asking" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">The Weight of Asking</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 9,200</p>
+        <a href="contact.html?work=The+Weight+of+Asking" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/Ghanem-Hassan-Winds_20of_20Change_20241210183315482_01f79656-a494-456c-b616-ab3fc2cbebfc.jpg?v=1733991581" alt="Winds of Change" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Winds of Change</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 8,600</p>
+        <a href="contact.html?work=Winds+of+Change" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/f8f36717-ccd9-4106-9aa9-a1d025bc37fb.jpg?v=1768308636" alt="The Four Elements" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">The Four Elements</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 7,600</p>
+        <a href="contact.html?work=The+Four+Elements" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/f48cbe82-8df8-4334-8c64-42bb0ef63b1e.jpg?v=1768308448" alt="Map of Dreams" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Map of Dreams</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 7,500</p>
+        <a href="contact.html?work=Map+of+Dreams" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/e953d017-3b8b-483e-bb2c-f3d29c72a6bb.jpg?v=1768308288" alt="A Silent War of the Mind" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">A Silent War of the Mind</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 7,500</p>
+        <a href="contact.html?work=A+Silent+War+of+the+Mind" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/5f01ad76-cbfc-4677-a210-98a1d0c2c49b.jpg?v=1768308301" alt="Behind the Crowds" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Behind the Crowds</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 6,500</p>
+        <a href="contact.html?work=Behind+the+Crowds" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/f67de5af-0bd9-4e57-b89b-67e3d9d263be.jpg?v=1768308399" alt="Growing Together" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Growing Together</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 5,500</p>
+        <a href="contact.html?work=Growing+Together" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/215c9d44-05c9-4e55-8b03-d60a42c18011.jpg?v=1768308378" alt="Gold Dust Dreams" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Gold Dust Dreams</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 5,100</p>
+        <a href="contact.html?work=Gold+Dust+Dreams" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/6fb96ca3-dbe1-4087-9169-4eaf1ed2580b.jpg?v=1768308363" alt="Forgotten Places" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Forgotten Places</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 5,000</p>
+        <a href="contact.html?work=Forgotten+Places" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/8c65992a-1b94-46b9-90eb-49ea1a51684b.jpg?v=1768308321" alt="Black Rose Whispers" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Black Rose Whispers</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 4,900</p>
+        <a href="contact.html?work=Black+Rose+Whispers" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/949efb39-c033-4edf-b1ed-4fc2d723ec87.jpg?v=1768308653" alt="The Four Virtues" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">The Four Virtues</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 4,900</p>
+        <a href="contact.html?work=The+Four+Virtues" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/43fa75d1-8f10-4e5b-bf2d-79a3f9037f2e.jpg?v=1768308341" alt="Chromatic Rush" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Chromatic Rush</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 4,700</p>
+        <a href="contact.html?work=Chromatic+Rush" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/28027831-f32e-4115-b185-5ae0a1297759.jpg?v=1768308686" alt="The Long Wait" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">The Long Wait</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 3,800</p>
+        <a href="contact.html?work=The+Long+Wait" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/f0515991-7833-48e6-9be9-619f4ec5ae1e.jpg?v=1768308431" alt="Lost" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Lost</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 3,800</p>
+        <a href="contact.html?work=Lost" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/WhatsApp_Image_2025-03-30_at_12.40.11_PM.jpg?v=1743317072" alt="Egypt" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Egypt</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 4,000</p>
+        <a href="contact.html?work=Egypt" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/1c38f76a-0f60-4606-bf01-c204d2e00d93.jpg?v=1768308510" alt="Path of Purpose" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Path of Purpose</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 2,700</p>
+        <a href="contact.html?work=Path+of+Purpose" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/f230f54e-dad1-425c-b51a-9adfacbe6f58.jpg?v=1768308600" alt="Strings of Milan" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Strings of Milan</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 2,400</p>
+        <a href="contact.html?work=Strings+of+Milan" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/1_091fd539-90b0-4edc-9644-fe314a30389e.jpg?v=1745645785" alt="Golden Enigma" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Golden Enigma</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 1,800</p>
+        <a href="contact.html?work=Golden+Enigma" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/e2836d27-0dbf-4dfc-8086-33beb896d3e8.png?v=1768308495" alt="Nabucco" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Nabucco</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 1,200</p>
+        <a href="contact.html?work=Nabucco" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/9a939b3c-9418-49b0-b75e-680e568dab10.jpg?v=1768308471" alt="Mystic Gold" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Mystic Gold</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 600</p>
+        <a href="contact.html?work=Mystic+Gold" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/51a70353-7c79-42d8-83aa-c8ffc89fe8e0.jpg?v=1768308419" alt="Kings and Queens" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Kings and Queens</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 600</p>
+        <a href="contact.html?work=Kings+and+Queens" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <article class="wc-card" data-status="available">
+      <a href="#" class="wc-card__img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/r_Ghanem_Sydney.jpg?v=1745645746" alt="Sydney" loading="lazy"/>
+        <div class="wc-card__overlay"><span>View Work →</span></div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Sydney</h3>
+          <span class="status available">Available</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price">USD 3,500</p>
+        <a href="contact.html?work=Sydney" class="btn btn--gold btn--sm">Inquire →</a>
+      </div>
+    </article>
+
+    <!-- SOLD -->
+    <article class="wc-card" data-status="sold">
+      <a href="#" class="wc-card__img-wrap wc-card__img-wrap--sold">
+        <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/r_Ghanem_3.jpg?v=1745646863" alt="Everywhere We Go" loading="lazy"/>
+        <div class="wc-card__sold-badge">Sold</div>
+      </a>
+      <div class="wc-card__info">
+        <div class="wc-card__top">
+          <h3 class="wc-card__title">Everywhere We Go</h3>
+          <span class="status sold">Sold</span>
+        </div>
+        <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+        <p class="wc-card__price wc-card__price--sold">In a private collection</p>
       </div>
     </article>
 
   </section>
 
-  <section class="commission-strip">
-    <div class="commission-strip__inner">
-      <p class="section-label">Commissions</p>
-      <h2 class="commission-strip__title">A work made for you.</h2>
-      <p class="commission-strip__body">
-        Ghanem accepts a limited number of commissions each year. 
-        If you are looking for a work made for a specific space, 
-        intention, or story — write to him directly.
-      </p>
-      <a href="contact.html?type=commission" class="btn btn--outline">Discuss a Commission</a>
+  <!-- SIZE NOTE -->
+  <section class="size-note">
+    <div class="size-note__inner">
+      <p class="section-label">About Dimensions</p>
+      <h2 class="size-note__title">Physical dimensions available on request.</h2>
+      <p class="size-note__body">Each painting is one of a kind. Exact canvas dimensions, weight, and framing details are provided when you inquire. Ghanem responds personally to every message.</p>
+      <a href="contact.html" class="btn btn--outline">Write to Ghanem →</a>
     </div>
   </section>
 
@@ -157,7 +561,7 @@
         <a href="contact.html">Contact</a>
         <a href="https://instagram.com/ghanemhassan_" target="_blank" rel="noopener">@ghanemhassan_</a>
       </div>
-      <p class="footer__copy">© 2024 Ghanem Hassan · ghanemhassan.com</p>
+      <p class="footer__copy">© 2025 Ghanem Hassan · ghanemhassan.com</p>
     </div>
   </footer>
 
