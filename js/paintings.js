@@ -1,611 +1,951 @@
 const PAINTINGS = [
   {
-    "name": "A Silent War of the Mind",
-    "slug": "a-silent-war-of-the-mind",
-    "main": "https://drive.google.com/thumbnail?id=13ayRUYgWhjimuAmrigdJ2HDsMHFSi9NS&sz=w1200",
-    "extras": [],
-    "sold": false,
-    "price": 7500
-  },
-  {
-    "name": "Behind the crowds",
-    "slug": "behind-the-crowds",
-    "main": "https://drive.google.com/thumbnail?id=1XQfCKzBobjs4hwFGUQ_k9qsTBnKcEo7Y&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1A9jscyZ6gErMwW3Z6-RQ400BMC4zmzuX&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1KKWlC-o88YCDc72yBmXPzSACmmgT3j5T&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1aTzlfvb7Ve_VIF--NZWblSnIaBbemCAu&sz=w1200"
-    ],
-    "sold": false,
-    "price": 6500
-  },
-  {
-    "name": "Black Rose Whispers",
-    "slug": "black-rose-whispers",
-    "main": "https://drive.google.com/thumbnail?id=1e77m20-DGiAhULV_i-aUuHE9iuQ5GuEk&sz=w1200",
-    "extras": [],
-    "sold": false,
-    "price": 4900
-  },
-  {
-    "name": "City Dappled Dreams",
-    "slug": "city-dappled-dreams",
-    "main": "https://drive.google.com/thumbnail?id=1thk7OVNwwHpUtipnn4xv8RNLlTR5iG3_&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "Dragons",
-    "slug": "dragons",
-    "main": "https://drive.google.com/thumbnail?id=1AshDdZ7g_0uyHPq8qcZeKNjRDagp8ooZ&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "Embracing Life",
-    "slug": "embracing-life",
-    "main": "https://drive.google.com/thumbnail?id=13cWg5wl8lxmmzD71rKFYMtoNT_UNr-Lv&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1ysAcXJ2qqJupbAVy9-whHJzLFi1c9LId&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1ImoAO6Do8TiwoLjlZAn2T6RU0cCTHVcq&sz=w1200"
-    ],
-    "sold": false
-  },
-  {
-    "name": "Gold Dust Dreams",
-    "slug": "gold-dust-dreams",
-    "main": "https://drive.google.com/thumbnail?id=1SXzdOJSBkO88g4-VIbgxIJAZtwniR8Dz&sz=w1200",
-    "extras": [],
-    "sold": false,
-    "price": 5100
-  },
-  {
-    "name": "Golden Enigma",
-    "slug": "golden-enigma",
-    "main": "https://drive.google.com/thumbnail?id=1_KJhMKA5vmW1Mm0kSkVr7RGCyjCxAemz&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1EOX2RKAu2fRCRo4XtTMkBAI87Fbw8ooO&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1dBQ8b2tqPcfxGHY5t9csuYR_DKaIEGnV&sz=w1200"
-    ],
-    "sold": false,
-    "price": 1800
-  },
-  {
-    "name": "In my veins 1",
-    "slug": "in-my-veins-1",
-    "main": "https://drive.google.com/thumbnail?id=1dR5QRHe-JBTfR8IZojQ2n-xLfMf9wGMg&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "Inverno",
-    "slug": "inverno",
-    "main": "https://drive.google.com/thumbnail?id=1vTes8ktGaYG-uJ1vpD43zNUJMZ1RTxoU&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "Kings and Queens",
-    "slug": "kings-and-queens",
-    "main": "https://drive.google.com/thumbnail?id=1X3yey8AA4L_r4uYAc_3ymd4p6ADz7RfH&sz=w1200",
-    "extras": [],
-    "sold": false,
-    "price": 600
-  },
-  {
-    "name": "Life",
-    "slug": "life",
-    "main": "https://drive.google.com/thumbnail?id=1_Gpi180ZIZ2RJE_4yTX3wacpic0Jh_me&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "Lost",
-    "slug": "lost",
-    "main": "https://drive.google.com/thumbnail?id=1CUG42svNgWyP74xA7QPo3mt14zyUzM-k&sz=w1200",
-    "extras": [],
-    "sold": false,
-    "price": 3800
-  },
-  {
-    "name": "Luminous Eclipse",
-    "slug": "luminous-eclipse",
-    "main": "https://drive.google.com/thumbnail?id=1aNvstVGl8SvmNBaY0QGUs2BfJyJcaTxL&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "Mosaic of life",
-    "slug": "mosaic-of-life",
-    "main": "https://drive.google.com/thumbnail?id=1ORGTVYI-4J9OzMs1nmi4YIoRasgVJ0lo&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1W_xONIkbLNxsxtzDcw-gZXHG242ykwtG&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1NVAczBcYf_zaFr_aDo2U3hlj0Y6nis6G&sz=w1200"
-    ],
-    "sold": false
-  },
-  {
-    "name": "Mystic Gold",
-    "slug": "mystic-gold",
-    "main": "https://drive.google.com/thumbnail?id=16J44nymBOnVTns9FfbX3KKLQdmX-cnb1&sz=w1200",
-    "extras": [],
-    "sold": false,
-    "price": 600
-  },
-  {
-    "name": "Nabucco",
-    "slug": "nabucco",
-    "main": "https://drive.google.com/thumbnail?id=1z0vj1xsKvZ_LZCf57Jx4qK-0z9mKtqV7&sz=w1200",
-    "extras": [],
-    "sold": false,
-    "price": 1200
-  },
-  {
-    "name": "Paint The World",
-    "slug": "paint-the-world",
-    "main": "https://drive.google.com/thumbnail?id=1VWfN2iA8KEBV-c12oOPEBya19DT8nRJK&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "Path of purpose",
-    "slug": "path-of-purpose",
-    "main": "https://drive.google.com/thumbnail?id=1gPMlckrexRj1cqRSykwd52573qm5AUX-&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1lZaBp96Cj9HYQhTACOeam6nzJSSV1Il8&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1ewmBKtJFXUv-kuj9431EEbl07fWDg7Yg&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1NxpEiWwLa6ovAf7DvPTHK_Ad-7R8kQ_c&sz=w1200"
-    ],
-    "sold": false,
-    "price": 2700
-  },
-  {
-    "name": "Pixels",
-    "slug": "pixels",
-    "main": "https://drive.google.com/thumbnail?id=1WfSpvW5DwcJLtQdl0xJ3ky_AV8E80-SB&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "Sharp love",
-    "slug": "sharp-love",
-    "main": "https://drive.google.com/thumbnail?id=1_wOqpH22aE4W14uyQNvCEP5huAsZrQXt&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "Shredded",
-    "slug": "shredded",
-    "main": "https://drive.google.com/thumbnail?id=1F6HxJu5AUuWmnUbfeDxTfCliTU3LdDvB&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1Bqs5mzAb28u1tyyglc1k5Z_TXsSWjnA4&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1gjs3Juzs9TLCBVB6BOW0wIBLRJxY2NzY&sz=w1200"
-    ],
-    "sold": false
-  },
-  {
-    "name": "Skin of silence",
+    "name": "Skin of Silence",
     "slug": "skin-of-silence",
+    "size": "90×80 cm",
+    "medium": "Mixed media + diamond powder on canvas",
+    "year": "2025",
+    "description": "Beneath a calm green surface, a solitary scar traces the canvas — deliberate and unforgettable. From its depths, hidden sparks emerge, telling of a quiet, unexpected beauty. What appears strong and impenetrable reveals, to those who look closer, grace and delicacy. This painting comes with a magnifier, allowing only its owner to witness the delicate beauty of the diamond powder up close, and to discover the true essence of the person it represents.",
     "main": "https://drive.google.com/thumbnail?id=1ltwHWcGO1QcV_5VkQNVqYaGnTfIV1jrd&sz=w1200",
     "extras": [],
     "sold": false,
-    "price": 26500
-  },
-  {
-    "name": "Sunsets",
-    "slug": "sunsets",
-    "main": "https://drive.google.com/thumbnail?id=1RFRg8QeR7olo_L_aUgwQPZwgr4ZYNsp3&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "Sydney",
-    "slug": "sydney",
-    "main": "https://drive.google.com/thumbnail?id=12rvApz-WV2fKAKWFXrvY6x1IAD50cbfC&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1L3YAQ9jN0Jx4695qdHgMu0DUJA0yn9bT&sz=w1200"
-    ],
-    "sold": false,
-    "price": 3500
-  },
-  {
-    "name": "The Colorful Darkness",
-    "slug": "the-colorful-darkness",
-    "main": "https://drive.google.com/thumbnail?id=1Wk7j6nXxM06cZjRb94VESMtD7K6Uxg9p&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "The Growth Within",
-    "slug": "the-growth-within",
-    "main": "https://drive.google.com/thumbnail?id=1cfmO79KIT9INmiWMBU7nbdS2fhJAYtcT&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1Rl1wh_wefC0NoERyBwbjogDxHGKgsC_n&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1cOxat5KCW815zvVSAC7B6AqQziTfh2WN&sz=w1200"
-    ],
-    "sold": false,
-    "price": 2500
-  },
-  {
-    "name": "The Healing Wound",
-    "slug": "the-healing-wound",
-    "main": "https://drive.google.com/thumbnail?id=1s1sguGOtAxm4JlK55B9vTkxKi52ux-BX&sz=w1200",
-    "extras": [],
-    "sold": false,
-    "price": 10200
-  },
-  {
-    "name": "The Holy Night",
-    "slug": "the-holy-night",
-    "main": "https://drive.google.com/thumbnail?id=1AWZB9HVAipTI6aMnGW5W0vLiMSGJb86N&sz=w1200",
-    "extras": [],
-    "sold": false
+    "price_eur": 22500
   },
   {
     "name": "The Memory Beneath",
     "slug": "the-memory-beneath",
+    "size": "80×70 cm",
+    "medium": "Mixed media + 0.30ct D-color diamond + 3 emeralds (0.20ct)",
+    "year": "2025",
+    "description": "A deep blue surface holds the quiet of what was lost — a name, a language once spoken, a home. Golden fragments trace forgotten origins, like prayers eroded by time. At the center, a diamond glows — guarding its calm, its light sustained by emeralds. It could not rise alone; it needed others beside it. A meditation on connection: beauty that endures through those who surround it.",
     "main": "https://drive.google.com/thumbnail?id=1F3Na6b9x_c-F8bhNQU4g2RKHj_qHcCAd&sz=w1200",
     "extras": [],
     "sold": false,
-    "price": 13300
+    "price_eur": 12000
   },
   {
-    "name": "Tokyo",
-    "slug": "tokyo",
-    "main": "https://drive.google.com/thumbnail?id=1rjGKD4CjI_S_RFe22ySRMobhfiPsRop8&sz=w1200",
+    "name": "The Weight of Asking",
+    "slug": "the-weight-of-asking",
+    "size": "80×70 cm",
+    "medium": "Mixed media + 0.30ct GIA certified round brilliant diamond",
+    "year": "2025",
+    "description": "Questions linger, heavy and unanswered. Golden symbols speak in an ancient language, offering fragments of meaning. Their weight — of time and waiting — has created layers, making answers difficult to find. Through the fractures, a diamond emerges: born from pressure, from struggle, from the questions themselves. A meditation on inquiry, endurance, and the unexpected beauty that rises from what tries to break us.",
+    "main": "https://drive.google.com/thumbnail?id=1dqQkdYWZ8iRBQDBRIh7H01BXLwjopxdE&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 8300
+  },
+  {
+    "name": "She Who Carries The Light",
+    "slug": "she-who-carries-the-light",
+    "size": "90×80 cm",
+    "medium": "Mixed media + 0.70ct GIA certified colorless diamond",
+    "year": "2025",
+    "description": "Her silence speaks of endurance and grace. Her eyes, closed to the world, see beyond it. The diamond at her third eye is not adornment — it is revelation. It gathers every unseen sorrow, every act of quiet strength, and returns them as light. She stands as matriarch and mirror, carrying generations within her stillness. From pain, she creates clarity. From silence, radiance.",
+    "main": "https://drive.google.com/thumbnail?id=1NRQhIZvIxdwG2wyegb4RCFW1Phu_yV7J&sz=w1200",
     "extras": [],
     "sold": false
+  },
+  {
+    "name": "Script of the Displaced",
+    "slug": "script-of-the-displaced",
+    "size": "300×200 cm",
+    "medium": "Mixed media + gold leaf on canvas",
+    "year": "2025",
+    "description": "Script-like patterns beneath the blue surface reference language, networks, and cultural codes disrupted by displacement. Scattered gold fragments suggest identity broken apart and patiently reassembled after leaving one's homeland. A testament to memory carried forward while navigating a new life. The largest work in Ghanem's catalog.",
+    "main": "",
+    "extras": [],
+    "sold": false,
+    "price_eur": 16500
+  },
+  {
+    "name": "The Will to Rebuild",
+    "slug": "the-will-to-rebuild",
+    "size": "200×150 cm",
+    "medium": "Mixed media + gold leaf on canvas",
+    "year": "2025",
+    "description": "Set against a deep, dark canvas, this is a profound visual narrative of emotional strength and resilience. Black tones suggest isolation and uncertainty — the difficult beginnings of a new chapter — while radiant gold leaf surfaces symbolize the emergence of inner power and the act of self-reconstruction. An intimate story of survival and transformation.",
+    "main": "",
+    "extras": [],
+    "sold": false,
+    "price_eur": 14500
+  },
+  {
+    "name": "The Hearth of Sacrifice",
+    "slug": "the-hearth-of-sacrifice",
+    "size": "130×80 cm",
+    "medium": "Mixed media + gold leaf on canvas",
+    "year": "2025",
+    "description": "An emotive exploration of pressure and urgency, rendered through vibrant red and luminous gold leaf. Red channels the tension, vulnerability, and intense energy of rebuilding from vulnerability, while the composition speaks to the unseen burdens of adaptation and the psychological cost of forging a new life in solitude. The pain and the strength required to make meaningful personal change.",
+    "main": "https://drive.google.com/thumbnail?id=1VwEv2C62Y_bVqyPyH7E0kSWcpwakXgD3&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 8600
+  },
+  {
+    "name": "Suspended Dreams",
+    "slug": "suspended-dreams",
+    "size": "130×100 cm",
+    "medium": "Mixed media + gold leaf on canvas",
+    "year": "2025",
+    "description": "A liminal space where aspirations linger. The verdant green field conveys solitude and gentle anticipation, while isolated gold shapes stand for dreams resting in limbo: fragile, unresolved, yet not forgotten. The emotional landscape of ambitions held in pause — hope, transition, and the persistence of desire.",
+    "main": "",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "Fragments of Reunion",
+    "slug": "fragments-of-reunion",
+    "size": "90×80 cm",
+    "medium": "Mixed media + gold leaf on canvas",
+    "year": "2026",
+    "description": "Scattered gold fragments across a darkened field evoke the dispersed remnants of conversations, memories, and connections severed by departure. Blue undertones hint at buried language, while the uneven distribution reflects the challenge of gathering what was lost. The enduring glow suggests the quiet, persistent labor of reassembling a new whole.",
+    "main": "",
+    "extras": [],
+    "sold": false,
+    "price_eur": 2400
+  },
+  {
+    "name": "Window of Vital Exhos",
+    "slug": "window-of-vital-exhos",
+    "size": "100×90 cm",
+    "medium": "Mixed media + gold leaf on canvas",
+    "year": "2026",
+    "description": "A window onto a world pulsing with life beyond isolation. The blue field represents the barrier of distance and memory, cracked to reveal glimpses of vitality. Gold overlays suggest moving blood, collective humanity, art, and aspirations surviving rupture. People and dreams persist outside, alive and resilient — hope endures through separation.",
+    "main": "",
+    "extras": [],
+    "sold": false,
+    "price_eur": 2400
+  },
+  {
+    "name": "A Silent War of the Mind",
+    "slug": "a-silent-war-of-the-mind",
+    "size": "150×100 cm",
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "Two women — one in gold, one in metallic blue — locked in a silent, inescapable struggle. They have no hands to fight, only their armored skin. A golden wall stands between them. The battle happens through rays extending from their heads: pushing, pulling, resisting. The rays flicker and shift, from fractured blues of despair to burning golds and reds. Not just struggle — survival.",
+    "main": "https://drive.google.com/thumbnail?id=13ayRUYgWhjimuAmrigdJ2HDsMHFSi9NS&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 7500
+  },
+  {
+    "name": "Celebration of Identity",
+    "slug": "celebration-of-identity",
+    "size": "150×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "The story of the journey to find where you truly belong — to embrace your identity in a world that feels divided. Colors represent the richness of individual identities, while intricate patterns show how we are all interconnected. The dark background symbolizes challenges; the bright shapes shine with the resilience gained from finding one's place. A reminder that there is beauty in individuality and power in unity.",
+    "main": "https://drive.google.com/thumbnail?id=1jzbzpgwOiPX5lj7t1qiCX4qZF897qcXH&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 10700
+  },
+  {
+    "name": "Circles of Life",
+    "slug": "circles-of-life",
+    "size": "150×100 cm",
+    "medium": "Acrylic + 22kt gold leaf on canvas",
+    "year": "2024",
+    "description": "Bursting with colors representing love, passion, hope, dreams, family, and friendship — each red circle symbolizing these vital parts of life. The streaks of real 22kt gold leaf that intersect show the scars left by our experiences, revealing strength and resilience as we grow. Our scars are essential to our story.",
+    "main": "https://drive.google.com/thumbnail?id=1GkPpaY8Hwa75kZs-cKhJGyRiSwpn9Yjh&sz=w1200",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "The Four Elements",
+    "slug": "the-four-elements",
+    "size": "150×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "Earth, Water, Fire, and Air — each symbolizing vital aspects of life. Earth: stability and foundation. Water: emotions and intuition. Fire: transformation and passion. Air: intellect and communication. This painting celebrates the harmony and balance of these essential elements, reminding us of their crucial roles in the tapestry of life.",
+    "main": "https://drive.google.com/thumbnail?id=1WylvnWXLipLMbYkAfELd7v1vL0fQ55Kc&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 7600
+  },
+  {
+    "name": "Gilded Tale",
+    "slug": "gilded-tale",
+    "size": "150×100 cm",
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "The journey of life as a timeline filled with shadows of people in black, white, and grey. The golden line running through the painting represents the significant individuals who bring light and value into our lives. These golden figures symbolize the special moments and relationships that stand out amidst the ordinary, highlighting their enduring impact.",
+    "main": "https://drive.google.com/thumbnail?id=1VwEv2C62Y_bVqyPyH7E0kSWcpwakXgD3&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 9800
   },
   {
     "name": "Winds of Change",
     "slug": "winds-of-change",
+    "size": "150×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "Life's winds of change have a way of shifting our course, much like a breeze carrying us to new places. Even in the company of familiar faces, these winds can lead us on unexpected adventures. Embrace the journey — it is in these winds that we find new horizons and uncover our inner strength.",
     "main": "https://drive.google.com/thumbnail?id=18j0MTBisum3fBGKnKoMJyScPOVXu5Odp&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1LpoqYGqDteyxQm5J9MX0r49KgUKYOAYx&sz=w1200"
-    ],
+    "extras": [],
     "sold": false,
-    "price": 8600
+    "price_eur": 8600
   },
   {
-    "name": "ambler",
-    "slug": "ambler",
-    "main": "https://drive.google.com/thumbnail?id=1ZNEwABExYjLk2VqILuHd_ZUBcvg_v338&sz=w1200",
+    "name": "Embracing Life",
+    "slug": "embracing-life",
+    "size": "150×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2022",
+    "description": "Bursts with vibrant energy and color, celebrating the joy and dynamism of living.",
+    "main": "https://drive.google.com/thumbnail?id=13cWg5wl8lxmmzD71rKFYMtoNT_UNr-Lv&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "aristocrates",
-    "slug": "aristocrates",
-    "main": "https://drive.google.com/thumbnail?id=1k9xYm5fgyLk5qneteOuvTdvuHq1y2CHj&sz=w1200",
+    "name": "Behind the Crowds",
+    "slug": "behind-the-crowds",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "Vibrant rows of people, each painted in a unique color. This artwork symbolizes the diversity and unity of human experience — a scene where viewers are both participants and observers. The concept of a painting within a painting adds depth, encouraging reflection on our own perspectives and the shared experiences that connect us.",
+    "main": "https://drive.google.com/thumbnail?id=1XQfCKzBobjs4hwFGUQ_k9qsTBnKcEo7Y&sz=w1200",
     "extras": [],
-    "sold": false
-  },
-  {
-    "name": "august",
-    "slug": "august",
-    "main": "https://drive.google.com/thumbnail?id=1eSwEQvnRFmPotK5IbUlBVcIvmlomCyrc&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "bound of love",
-    "slug": "bound-of-love",
-    "main": "https://drive.google.com/thumbnail?id=1EnLmya6wqKW44KfJZpWmvDJOPEffV-AG&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "broken mirrors",
-    "slug": "broken-mirrors",
-    "main": "https://drive.google.com/thumbnail?id=14OM0SbHOL_gqg0Clv6CV2LwsSJ2wk97a&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "celebration of identity",
-    "slug": "celebration-of-identity",
-    "main": "https://drive.google.com/thumbnail?id=1jzbzpgwOiPX5lj7t1qiCX4qZF897qcXH&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=18474W3m8wu_kf9_e2gDjtyHEN0raxW5J&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1hqZQVCTpR4vxM-dDYe_asJTqUP3GeyUC&sz=w1200"
-    ],
     "sold": false,
-    "price": 10700
+    "price_eur": 4900
   },
   {
-    "name": "chromatic rush",
+    "name": "Black Rose Whispers",
+    "slug": "black-rose-whispers",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "A striking monochromatic painting inspired by 'Paint It Black.' The entirely black canvas features roses that emerge vividly — a departure from color and a journey into the depths of emotion and introspection. The beauty found within darkness and the profound impact of stripping away the superficial to reveal the essence.",
+    "main": "https://drive.google.com/thumbnail?id=1e77m20-DGiAhULV_i-aUuHE9iuQ5GuEk&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 4900
+  },
+  {
+    "name": "Chromatic Rush",
     "slug": "chromatic-rush",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "Green for growth and harmony. Yellow for joy, intellect, and energy. Orange for enthusiasm and creativity. Red for energy, power, passion, and love. The black background suggests the vastness of the unknown — a stark contrast that accentuates the vibrant colors. The thick texture adds a tactile quality, making you feel the physical movement of the whole experience.",
     "main": "https://drive.google.com/thumbnail?id=14LR5L8uZNleh0vga1qujXFd4sC1aBids&sz=w1200",
     "extras": [],
     "sold": false,
-    "price": 4700
+    "price_eur": 4200
   },
   {
-    "name": "circles of life",
-    "slug": "circles-of-life",
-    "main": "https://drive.google.com/thumbnail?id=1GkPpaY8Hwa75kZs-cKhJGyRiSwpn9Yjh&sz=w1200",
+    "name": "Forgotten Places",
+    "slug": "forgotten-places",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "Forgotten places are like quiet time machines, holding secrets of days long past. Hidden from the rush of the world, patiently waiting to share their stories. Exploring these hidden gems is like uncovering a treasure trove of history. In their quiet presence, we find beauty in the stories they hold — every corner of the world has a tale to tell.",
+    "main": "",
     "extras": [],
-    "sold": false
-  },
-  {
-    "name": "dilerium",
-    "slug": "dilerium",
-    "main": "https://drive.google.com/thumbnail?id=1NHk2iAPU928BqgBX2L5St6oiIJ9Adio3&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "edwina",
-    "slug": "edwina",
-    "main": "https://drive.google.com/thumbnail?id=1UNOQnDPlhEY0deRUoQ8GF36VTd6g3nWa&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "egypt",
-    "slug": "egypt",
-    "main": "https://drive.google.com/thumbnail?id=1Pa5-99HC9VE8uy56C7QWS1MbLimQQ8Id&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1nB6LlxoKyO-593afI9IOQ9afxDLFR3zq&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1xsK9gWk6texBfUIUNwpllGQv-WEdIlJW&sz=w1200"
-    ],
     "sold": false,
-    "price": 4000
+    "price_eur": 5000
   },
   {
-    "name": "escape",
+    "name": "Gold Dust Dreams",
+    "slug": "gold-dust-dreams",
+    "size": "100×100 cm",
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "Dreams once burning bright, full of passion and hope — now buried under the weight of life's distractions. The gold, once radiant, now flickers dimly. The silver leaves represent broken aspirations that never fully took flight. But the green still whispers hope: even as dreams feel far away, they still have the power to rise again. No dream is ever truly lost — it waits, buried beneath the dust, for the right moment to bloom.",
+    "main": "https://drive.google.com/thumbnail?id=1SXzdOJSBkO88g4-VIbgxIJAZtwniR8Dz&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 5100
+  },
+  {
+    "name": "Growing Together",
+    "slug": "growing-together",
+    "size": "100×100 cm",
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "The story of two souls whose bond is forged in fire. The delicate white spider web between them — at first perfect — begins to crack. These cracks are born of raw, unspoken suffering. The weight of grief, betrayal, and fear presses down, pushing their bond to its breaking point. But they don't break. Every painful moment only sharpens their connection. Love isn't about avoiding the storm — it's about standing together in the eye of it.",
+    "main": "https://drive.google.com/thumbnail?id=1X9MporS6QNiN_DZRoBkXzTlgfbK-DM2u&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 5500
+  },
+  {
+    "name": "Harmony of the Cosmos",
+    "slug": "harmony-of-the-cosmos",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "The cosmic journey where life and music intertwine. The central motif — resembling a vinyl record — signifies the rhythm of existence and the universe's energy. Against the backdrop of darkness, multicolored speckles symbolize the cosmos' diverse elements. As we delve deeper, the darkness dissipates — signifying enlightenment gained through exploration.",
+    "main": "https://drive.google.com/thumbnail?id=1OjMyfi9kkZziQgur-f-j9DmZwAH8AHND&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 3900
+  },
+  {
+    "name": "The Four Virtues",
+    "slug": "the-four-virtues",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "Wisdom, Courage, Justice, and Temperance — the principles that keep the universe in balance. Blue for Wisdom. Red for Courage. Green for Justice. Forest green for Temperance. These circles are always connected, showing how virtues rely on each other. True balance in life comes when wisdom guides bravery, justice is measured, and all actions are balanced by these main virtues.",
+    "main": "https://drive.google.com/thumbnail?id=13n4Dk2QVGSY8P96Qq7G0-JfByQZwiL9O&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 4900
+  },
+  {
+    "name": "The Growth Within",
+    "slug": "the-growth-within",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "The interconnectedness of humans with nature and the universe through a fusion of man and tree. This motif embodies growth through exchange. The incomplete figure signifies ongoing learning and evolution, with the gaps representing uncharted knowledge. Encircling the figure, a symbolic boundary hints at self-imposed limitations — urging us to transcend fears for personal growth.",
+    "main": "https://drive.google.com/thumbnail?id=1cfmO79KIT9INmiWMBU7nbdS2fhJAYtcT&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 2500
+  },
+  {
+    "name": "The Healing Wound",
+    "slug": "the-healing-wound",
+    "size": "160×120 cm",
+    "medium": "Mixed media on canvas",
+    "year": "2025",
+    "description": "In the darkest moments, we often feel numb. The pain hides behind survival, and we keep going without truly realizing how deep the wound is. But healing brings clarity. With it, the real pain surfaces — not from the moment itself, but from the silence that follows. The scars remain as quiet reminders of what we endured. Looking back, feeling how much we endured — only after we're whole again.",
+    "main": "https://drive.google.com/thumbnail?id=1s1sguGOtAxm4JlK55B9vTkxKi52ux-BX&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 10200
+  },
+  {
+    "name": "The Long Wait",
+    "slug": "the-long-wait",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "Vertical brushstrokes in shades of white, yellow, and black represent a mother — the varying intensity reflecting the passage of time and her transformation over the years. Yellow hues evoke the nostalgia of old memories, fading with time. A vivid red spot amidst the brushstrokes signifies a son's departure, starkly contrasting with the rest of the painting to emphasize its profound impact. Enduring love and longing. The relentless march of time.",
+    "main": "https://drive.google.com/thumbnail?id=1mGe9-PxKPJEESx9b8Bn6Ds4In7S2QdG8&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 3800
+  },
+  {
+    "name": "Life",
+    "slug": "life",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "It's life. With its magnificent rays of hope, dreams, love, misfortunes, losses, failures and successes, it pierces our every point of existence without any hesitation. If we humbly smile at its raw power, it may compassionately leave the light on at the end of the tunnel.",
+    "main": "https://drive.google.com/thumbnail?id=1_Gpi180ZIZ2RJE_4yTX3wacpic0Jh_me&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 3200
+  },
+  {
+    "name": "Lost",
+    "slug": "lost",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "In the endless sea, a lost ship reminds us of our small place in the world. A humbling thought, yet it holds a truth: even small actions can have big impacts. Let's sail forward with purpose, aware of our role in the larger picture of life.",
+    "main": "https://drive.google.com/thumbnail?id=1CUG42svNgWyP74xA7QPo3mt14zyUzM-k&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 3800
+  },
+  {
+    "name": "Map of Dreams",
+    "slug": "map-of-dreams",
+    "size": "100×100 cm",
+    "medium": "Mixed media + gold leaf on canvas",
+    "year": "2024",
+    "description": "Dreams begin as small, quiet sparks — fragile but full of hope. With time, we fight for them, shape them, build them into something greater. Gold flows through the painting like a reward for endurance. Ancient shapes and golden keys whisper of hidden battles, deep wisdom, and moments that changed everything. The path is never simple. But that's what makes it powerful.",
+    "main": "https://drive.google.com/thumbnail?id=1pWPlffLzw-0xdm96KtnIKTL7egGFfsjF&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 7500
+  },
+  {
+    "name": "My ID",
+    "slug": "my-id",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "Your ID is your personal badge — a tangible proof of who you are. It grants you access and validates your identity in various aspects of life. It may be a small card, but it holds significant importance in confirming your unique existence.",
+    "main": "https://drive.google.com/thumbnail?id=1bXqn-j2MbXU3S2rCgIXX_BJtYHI_vGfO&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 3200
+  },
+  {
+    "name": "Paint The World",
+    "slug": "paint-the-world",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "A vibrant three-layered painting radiating brightness and vitality. The first layer: diversity of cultures through a kaleidoscope of vivid hues. The second: the interconnectedness of humanity, where colors blend and merge. The final layer, shimmering with iridescence, signifies hope for a harmonious future. Every shade contributes to the beauty of our collective journey.",
+    "main": "https://drive.google.com/thumbnail?id=1VWfN2iA8KEBV-c12oOPEBya19DT8nRJK&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 3200
+  },
+  {
+    "name": "Path of Purpose",
+    "slug": "path-of-purpose",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "A powerful metaphor for the journey towards achieving one's goals. The central point represents steadfast purpose amidst life's chaos, while the radiating lines signify the passage of time and various opportunities. Vibrant reds and yellows depict passion and urgency. Amidst external criticisms — scattered black spots — the painting encourages resilience and determination.",
+    "main": "https://drive.google.com/thumbnail?id=1gPMlckrexRj1cqRSykwd52573qm5AUX-&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 2400
+  },
+  {
+    "name": "Strings of Milan",
+    "slug": "strings-of-milan",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "Combine music, fashion, mindful art and artistic minds with the wise history of a not so forgotten empire — and you get Milan. A maze of happenings, so complex it mesmerizes its captive, yet everything falls perfectly into place, surrendering the greatest nostalgia in those that seek to see the past and present in one picture.",
+    "main": "",
+    "extras": [],
+    "sold": false,
+    "price_eur": 2400
+  },
+  {
+    "name": "Veiled Emotions",
+    "slug": "veiled-emotions",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "The concept of 'Crocodile Tears' — a metaphor for insincere emotions. Two distinct sections represent two individuals who, despite physical proximity, are emotionally distant. The intricate pattern, reminiscent of a crocodile's skin, symbolizes the tough exterior maintained to hide true feelings. Each block represents a memory — remnants of a once intimate connection, keeping them bound together.",
+    "main": "https://drive.google.com/thumbnail?id=1EafKSUq7QjngUyt4k6RkSR9WTyUzOZVk&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 7400
+  },
+  {
+    "name": "Shredded",
+    "slug": "shredded",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "Explores themes of chaos and fragmentation, with layered textures and bold strokes that evoke emotional intensity.",
+    "main": "https://drive.google.com/thumbnail?id=1F6HxJu5AUuWmnUbfeDxTfCliTU3LdDvB&sz=w1200",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "The Colorful Darkness",
+    "slug": "the-colorful-darkness",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "Blends vibrant colors with deep, dark tones, exploring the balance between light and shadow.",
+    "main": "https://drive.google.com/thumbnail?id=1Wk7j6nXxM06cZjRb94VESMtD7K6Uxg9p&sz=w1200",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "Egypt",
+    "slug": "egypt",
+    "size": "40×30 cm",
+    "medium": "Acrylic + gold leaf on canvas",
+    "year": "2024",
+    "description": "Evoking the grandeur and mystique of ancient Egyptian culture — pyramids, hieroglyphics, the rich history, mythology, and artistry of a civilization that shaped humanity. A tribute rendered in acrylic and real gold leaf.",
+    "main": "https://drive.google.com/thumbnail?id=1Pa5-99HC9VE8uy56C7QWS1MbLimQQ8Id&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 1500
+  },
+  {
+    "name": "Sydney",
+    "slug": "sydney",
+    "size": "40×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "The essence of the vibrant city of Sydney, Australia. Beyond mere representation, it conveys the energy, diversity, and cultural richness — the dream of a city seen from the perspective of someone who knows what it means to dream of a place.",
+    "main": "https://drive.google.com/thumbnail?id=12rvApz-WV2fKAKWFXrvY6x1IAD50cbfC&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 3500
+  },
+  {
+    "name": "Golden Enigma",
+    "slug": "golden-enigma",
+    "size": "40×30 cm",
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "The feeling of something just out of reach — a quiet mystery that calls you to look closer. The golden hues draw you in, offering a glimpse of something beautiful yet unknowable. Abstract shapes and symbols seem familiar but elusive, much like the secrets we hold or the answers we seek. This piece doesn't provide all the answers — it invites you to sit with the mystery.",
+    "main": "https://drive.google.com/thumbnail?id=1_KJhMKA5vmW1Mm0kSkVr7RGCyjCxAemz&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 1800
+  },
+  {
+    "name": "Nabucco",
+    "slug": "nabucco",
+    "size": "70×50 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "Vertical brushstrokes create movement and intensity — the passionate arias and choruses of Verdi's Nabucco, where characters express their deepest emotions: longing, despair, defiance. Warm reds, browns, and golds mirror the dramatic atmosphere, evoking the heat of battle and the burning desire for freedom. Sporadic spots of white paint add moments of clarity amidst chaos.",
+    "main": "https://drive.google.com/thumbnail?id=1z0vj1xsKvZ_LZCf57Jx4qK-0z9mKtqV7&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 1050
+  },
+  {
+    "name": "Sunsets",
+    "slug": "sunsets",
+    "size": "70×50 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2022",
+    "description": "Bathes the canvas in warm, fading light, capturing the fleeting beauty of the end of the day.",
+    "main": "https://drive.google.com/thumbnail?id=1RFRg8QeR7olo_L_aUgwQPZwgr4ZYNsp3&sz=w1200",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "Bound of Love",
+    "slug": "bound-of-love",
+    "size": "40×30 cm",
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "Two people, lost in the world, unexpectedly find each other. The intersecting lines represent how their lives came together — each connection changing them in subtle yet powerful ways. Warm colors reflect the love they share: comforting, passionate, full of life. Love ties them together, growing stronger through challenges, quiet moments, and the simple acts of being there for each other.",
+    "main": "https://drive.google.com/thumbnail?id=1EnLmya6wqKW44KfJZpWmvDJOPEffV-AG&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 1200
+  },
+  {
+    "name": "Kings and Queens",
+    "slug": "kings-and-queens",
+    "size": "40×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "A tribute to power, presence, and legacy. Each dot is a monarch — distinct, bold, unrepeatable. Together they form a tapestry of history, culture, and color. This piece doesn't just honor royalty — it reimagines it, celebrating the richness and individuality of rulers across time and place.",
+    "main": "https://drive.google.com/thumbnail?id=1X3yey8AA4L_r4uYAc_3ymd4p6ADz7RfH&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 470
+  },
+  {
+    "name": "Mystic Gold",
+    "slug": "mystic-gold",
+    "size": "30×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "This is where the soul begins to glow. Mystic Gold isn't about luxury — it's about rising. About breaking through darkness to find the light within. Every brushstroke hums with divine energy, ancient power, and quiet transformation. It's not a painting. It's a portal. A reminder that there's more within you, around you, beyond you.",
+    "main": "https://drive.google.com/thumbnail?id=16J44nymBOnVTns9FfbX3KKLQdmX-cnb1&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 470
+  },
+  {
+    "name": "Forbidden Fruit",
+    "slug": "forbidden-fruit",
+    "size": "30×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "Explores the attraction and temptation of forbidden things — desire, temptation, and the outcomes of giving in. Vibrant colors, dots, and spirals symbolize the complexity of these ideas. An invitation to think about the allure of what is forbidden and the layers of emotions and consequences that come with indulgence.",
+    "main": "https://drive.google.com/thumbnail?id=104AEAHfdFckX1NKlc1hofLbocIX3dgSC&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 470
+  },
+  {
+    "name": "Escape",
     "slug": "escape",
+    "size": "30×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "Liberation and exploration. Green hues interspersed with stripes of grey-blue evoke a sense of freedom and movement. Breaking barriers and embracing new horizons — the courage to explore unknown paths.",
     "main": "https://drive.google.com/thumbnail?id=1aTV3BC1K0HSRVyvn0uRPKw0R7Eek2uDb&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": false,
+    "price_eur": 470
   },
   {
-    "name": "everywhere we go",
+    "name": "Luminous Eclipse",
+    "slug": "luminous-eclipse",
+    "size": "30×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "The fleeting moment where light and shadow meet — not in conflict, but in harmony. A glowing band of sunset reds, oranges, and yellows slices through darkness, like the sun's last breath before nightfall. The quiet beauty of balance, the cosmic dance between presence and absence, light and dark.",
+    "main": "https://drive.google.com/thumbnail?id=1aNvstVGl8SvmNBaY0QGUs2BfJyJcaTxL&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 600
+  },
+  {
+    "name": "Ambler",
+    "slug": "ambler",
+    "size": "30×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "At the center, a golden bear radiates quiet strength and introspection. Within it, a pianist plays, a prophet watches, a tomb rests, and a horse's head emerges — each symbol weaving a story of creativity, wisdom, mortality, and freedom. A serene and layered journey inward.",
+    "main": "https://drive.google.com/thumbnail?id=1ZNEwABExYjLk2VqILuHd_ZUBcvg_v338&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 800
+  },
+  {
+    "name": "Hidden Figures",
+    "slug": "hidden-figures",
+    "size": "30×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "Mixes shiny gold leaf with dark colors. Contrasts richness with darkness to show there's more than meets the eye. The gold suggests talents or beauty hidden underneath what might seem ordinary or unnoticed — look beyond appearances and discover the hidden brilliance that often lies beneath the surface.",
+    "main": "https://drive.google.com/thumbnail?id=1dwVO0ForiEX3mMnxKDGylhvxx4apUXMf&sz=w1200",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "Everywhere We Go",
     "slug": "everywhere-we-go",
+    "size": "40×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "Wherever we go, we carry what we came from.",
     "main": "https://drive.google.com/thumbnail?id=1LEKs_5_DGJ2jG8GlQ2mamwwmSnX2KtfF&sz=w1200",
     "extras": [],
     "sold": true
   },
   {
-    "name": "forbidden fruit",
-    "slug": "forbidden-fruit",
-    "main": "https://drive.google.com/thumbnail?id=104AEAHfdFckX1NKlc1hofLbocIX3dgSC&sz=w1200",
+    "name": "Aristocrats",
+    "slug": "aristocrates",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
+    "main": "https://drive.google.com/thumbnail?id=1k9xYm5fgyLk5qneteOuvTdvuHq1y2CHj&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "gemini",
+    "name": "City Dappled Dreams",
+    "slug": "city-dappled-dreams",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "A city as seen from above, where each colorful zone tells its own unique story. Every color represents a different part of the city's soul.",
+    "main": "https://drive.google.com/thumbnail?id=1thk7OVNwwHpUtipnn4xv8RNLlTR5iG3_&sz=w1200",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "Delirium",
+    "slug": "dilerium",
+    "size": "70×50 cm",
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "Raw energy on canvas. Dark streaks slash through fiery reds and deep yellows — a mind tangled in chaos, struggling to break free. That moment when thoughts race, emotions surge, and reality bends. You don't just look at this painting — you feel it.",
+    "main": "https://drive.google.com/thumbnail?id=1NHk2iAPU928BqgBX2L5St6oiIJ9Adio3&sz=w1200",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "Dragons",
+    "slug": "dragons",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
+    "main": "https://drive.google.com/thumbnail?id=1AshDdZ7g_0uyHPq8qcZeKNjRDagp8ooZ&sz=w1200",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "Edwina",
+    "slug": "edwina",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
+    "main": "https://drive.google.com/thumbnail?id=1UNOQnDPlhEY0deRUoQ8GF36VTd6g3nWa&sz=w1200",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "Gemini",
     "slug": "gemini",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
     "main": "https://drive.google.com/thumbnail?id=1PBeN8NrAxpXjB5z09rJxS76aQ2_N3CWG&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1KZyK7RD-Ryj9Q7-Y0Hq6G3nGfbqQbbKP&sz=w1200"
-    ],
-    "sold": false
+    "extras": [],
+    "sold": true
   },
   {
-    "name": "gilded tale",
-    "slug": "gilded-tale",
-    "main": "https://drive.google.com/thumbnail?id=1VwEv2C62Y_bVqyPyH7E0kSWcpwakXgD3&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1u2nkVG_iaqfV6LtlIknqQIJCoE9dlTkA&sz=w1200"
-    ],
-    "sold": false,
-    "price": 9800
-  },
-  {
-    "name": "golden riddles",
+    "name": "Golden Riddles",
     "slug": "golden-riddles",
+    "size": "100×100 cm",
+    "medium": "Mixed media + gold leaf on canvas",
+    "year": "2024",
+    "description": "A brutal reflection of life's relentless pain — where every challenge feels like a crushing weight. The golden light, barely breaking through the darkness, represents the harsh, hard-won lessons that only emerge after we've been shattered.",
     "main": "https://drive.google.com/thumbnail?id=1NjKF0xCJ7uPtNfI3QcBx91CZchDzoS4g&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=13DHyGww85sxQlxSXtDHnwNdmnuygH0ys&sz=w1200"
-    ],
-    "sold": false
-  },
-  {
-    "name": "growing together",
-    "slug": "growing-together",
-    "main": "https://drive.google.com/thumbnail?id=1X9MporS6QNiN_DZRoBkXzTlgfbK-DM2u&sz=w1200",
     "extras": [],
-    "sold": false,
-    "price": 5500
+    "sold": true
   },
   {
-    "name": "harmony of the cosmos",
-    "slug": "harmony-of-the-cosmos",
-    "main": "https://drive.google.com/thumbnail?id=1OjMyfi9kkZziQgur-f-j9DmZwAH8AHND&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1YmQaiqdzffDvd5UUW0tn9LdKYpq4CebT&sz=w1200"
-    ],
-    "sold": false,
-    "price": 4400
-  },
-  {
-    "name": "hidden figures",
-    "slug": "hidden-figures",
-    "main": "https://drive.google.com/thumbnail?id=1dwVO0ForiEX3mMnxKDGylhvxx4apUXMf&sz=w1200",
+    "name": "In My Veins",
+    "slug": "in-my-veins-1",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
+    "main": "https://drive.google.com/thumbnail?id=1dR5QRHe-JBTfR8IZojQ2n-xLfMf9wGMg&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "lion king",
-    "slug": "lion-king",
-    "main": "https://drive.google.com/thumbnail?id=1oEuEWCqk5OllQTxz9kfrET33WErLoGxY&sz=w1200",
+    "name": "Inverno",
+    "slug": "inverno",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
+    "main": "https://drive.google.com/thumbnail?id=1vTes8ktGaYG-uJ1vpD43zNUJMZ1RTxoU&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "map of dreams",
-    "slug": "map-of-dreams",
-    "main": "https://drive.google.com/thumbnail?id=1pWPlffLzw-0xdm96KtnIKTL7egGFfsjF&sz=w1200",
-    "extras": [],
-    "sold": false,
-    "price": 7500
-  },
-  {
-    "name": "my id",
-    "slug": "my-id",
-    "main": "https://drive.google.com/thumbnail?id=1bXqn-j2MbXU3S2rCgIXX_BJtYHI_vGfO&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "newyork",
+    "name": "New York",
     "slug": "newyork",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
     "main": "https://drive.google.com/thumbnail?id=1STzO1ZRcmVlxiNJp2Yr7Rtce2bacIqtq&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1rSu7I5DfrlQmR0nnGkvMlbe-h-glYAKM&sz=w1200"
-    ],
-    "sold": false
+    "extras": [],
+    "sold": true
   },
   {
-    "name": "red lips",
+    "name": "Red Lips",
     "slug": "red-lips",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
     "main": "https://drive.google.com/thumbnail?id=17nbY1nE-Rda-6Qt56Ihb8PcuJ4h56iD3&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1Ora5l9Mpig_mvUpmSF_TUOV9CpCac9hP&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1wFHNH06s8BMW3v6k1iTRHSgnZuuIZE-V&sz=w1200"
-    ],
-    "sold": false
+    "extras": [],
+    "sold": true
   },
   {
-    "name": "shadows",
+    "name": "Shadows",
     "slug": "shadows",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
     "main": "https://drive.google.com/thumbnail?id=1VqNly5mjDl-rRiTmzVmpk9XGPEt3QSvu&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1OdX4csus6O5TPv4Xxe8ssdrwdAne7Ayp&sz=w1200"
-    ],
-    "sold": false
+    "extras": [],
+    "sold": true
   },
   {
-    "name": "sharp blades of love",
+    "name": "Sharp Blades of Love",
     "slug": "sharp-blades-of-love",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
     "main": "https://drive.google.com/thumbnail?id=1mINkJMVDLuNr9HiDzUliXDfT4721J__Y&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "she who carries the lights",
-    "slug": "she-who-carries-the-lights",
-    "main": "https://drive.google.com/thumbnail?id=1NRQhIZvIxdwG2wyegb4RCFW1Phu_yV7J&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1yTIzgU2w6OqY3TaBK8_UWHtZYx1IrZsq&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1ppsNKkiDosOJl3awRerIREzAu6qqR3Kt&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1050Z4jhpOkvDVvkdDUZqpGOnGC3WMXzN&sz=w1200",
-      "https://drive.google.com/thumbnail?id=19HhCUEkbMVhnvfXoat4t-pioAcL8bXoe&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1E1lrP5qU4WXNE4m3AW-Q5kNLgIPD2L_-&sz=w1200"
-    ],
-    "sold": false
-  },
-  {
-    "name": "sky full of stars",
-    "slug": "sky-full-of-stars",
-    "main": "https://drive.google.com/thumbnail?id=1M-RoQcmdEi9EWH-hfB8x_aM5vwaAp8SL&sz=w1200",
+    "name": "Sharp Love",
+    "slug": "sharp-love",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
+    "main": "https://drive.google.com/thumbnail?id=1_wOqpH22aE4W14uyQNvCEP5huAsZrQXt&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "subways",
+    "name": "Subways",
     "slug": "subways",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
     "main": "https://drive.google.com/thumbnail?id=18cc34MndoeD6I2AqYEabSvGrRLKRq0oy&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "the four elements",
-    "slug": "the-four-elements",
-    "main": "https://drive.google.com/thumbnail?id=1WylvnWXLipLMbYkAfELd7v1vL0fQ55Kc&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1lIcZjpGjLxAyFmb7qP-PwdoJ5fYiW3wh&sz=w1200"
-    ],
-    "sold": false,
-    "price": 7600
-  },
-  {
-    "name": "the four virtues",
-    "slug": "the-four-virtues",
-    "main": "https://drive.google.com/thumbnail?id=13n4Dk2QVGSY8P96Qq7G0-JfByQZwiL9O&sz=w1200",
+    "name": "The Holy Night",
+    "slug": "the-holy-night",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
+    "main": "https://drive.google.com/thumbnail?id=1AWZB9HVAipTI6aMnGW5W0vLiMSGJb86N&sz=w1200",
     "extras": [],
-    "sold": false,
-    "price": 4900
+    "sold": true
   },
   {
-    "name": "the lamentable lady",
+    "name": "The Lamentable Lady",
     "slug": "the-lamentable-lady",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
     "main": "https://drive.google.com/thumbnail?id=1OtB1uAJmaKYV7lRVsWAhdxiCJ0ZD180g&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "the last tree",
+    "name": "The Last Tree",
     "slug": "the-last-tree",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
     "main": "https://drive.google.com/thumbnail?id=1RdWdcqxMrdXKiX63OKCPhCd2XiWV2VeG&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "the long wait",
-    "slug": "the-long-wait",
-    "main": "https://drive.google.com/thumbnail?id=1mGe9-PxKPJEESx9b8Bn6Ds4In7S2QdG8&sz=w1200",
+    "name": "The Lion King",
+    "slug": "lion-king",
+    "size": "40×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "Symbolism associated with lions — strength, courage, and leadership. A majestic lion exuding power and dominance, or scenes of familial bonds and the circle of life.",
+    "main": "https://drive.google.com/thumbnail?id=1oEuEWCqk5OllQTxz9kfrET33WErLoGxY&sz=w1200",
     "extras": [],
-    "sold": false,
-    "price": 3800
+    "sold": true
   },
   {
-    "name": "the silent night",
-    "slug": "the-silent-night",
-    "main": "https://drive.google.com/thumbnail?id=1dXgQysCOXa0Jr7okYlJmxHHqT-SUrET6&sz=w1200",
+    "name": "Tokyo",
+    "slug": "tokyo",
+    "size": "50×50 cm",
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
+    "main": "https://drive.google.com/thumbnail?id=1rjGKD4CjI_S_RFe22ySRMobhfiPsRop8&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "the weight of asking",
-    "slug": "the-weight-of-asking",
-    "main": "https://drive.google.com/thumbnail?id=1dqQkdYWZ8iRBQDBRIh7H01BXLwjopxdE&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1yxxPceQGwVV4e4iYBlb9vVqJn6Fic0pV&sz=w1200"
-    ],
-    "sold": false,
-    "price": 9200
-  },
-  {
-    "name": "traces",
+    "name": "Traces",
     "slug": "traces",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
     "main": "https://drive.google.com/thumbnail?id=1B2mRXoXti4XLFkG5JRXrpty1X8lJN3Iy&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "trip dance",
-    "slug": "trip-dance",
-    "main": "https://drive.google.com/thumbnail?id=1-uxxcs5P70gNtKW2UcUkB7ZCqVbXv1BQ&sz=w1200",
-    "extras": [],
-    "sold": false
-  },
-  {
-    "name": "universe",
+    "name": "Universe",
     "slug": "universe",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
     "main": "https://drive.google.com/thumbnail?id=1lXZNY6gu9N3a_yQbBEEG6dI1Qq-4g1MM&sz=w1200",
     "extras": [],
-    "sold": false
+    "sold": true
   },
   {
-    "name": "veild emotions",
-    "slug": "veild-emotions",
-    "main": "https://drive.google.com/thumbnail?id=1EafKSUq7QjngUyt4k6RkSR9WTyUzOZVk&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1ncQEAthKrxwvc3dUUepwhBiO9D3vJszL&sz=w1200"
-    ],
-    "sold": false,
-    "price": 7400
-  },
-  {
-    "name": "web of colors",
+    "name": "Web of Colors",
     "slug": "web-of-colors",
+    "size": "40×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "",
     "main": "https://drive.google.com/thumbnail?id=1h9B4RAf9ShHk2PmHfcBt_kgcvlI4-zgy&sz=w1200",
-    "extras": [
-      "https://drive.google.com/thumbnail?id=1n45IGmcxoYFU3rQrstdqLfT0SM_DMJSU&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1M8YN5sY-KAB7KZcjR7lK1HHwdcudGEBz&sz=w1200"
-    ],
-    "sold": false
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "Mosaic of Life",
+    "slug": "mosaic-of-life",
+    "size": "100×100 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2024",
+    "description": "Each geometric shape, filled with a unique color, represents the diverse experiences and emotions encountered throughout our lives. Despite being fragmented, these pieces unite to form a vibrant and harmonious whole — a testament to our journey and the beauty of our existence.",
+    "main": "https://drive.google.com/thumbnail?id=1ORGTVYI-4J9OzMs1nmi4YIoRasgVJ0lo&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 3500
+  },
+  {
+    "name": "Trip Dance",
+    "slug": "trip-dance",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "The rhythm of movement — where bodies in motion tell the story the mind cannot.",
+    "main": "https://drive.google.com/thumbnail?id=1-uxxcs5P70gNtKW2UcUkB7ZCqVbXv1BQ&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 1800
+  },
+  {
+    "name": "Sky Full of Stars",
+    "slug": "sky-full-of-stars",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
+    "main": "https://drive.google.com/thumbnail?id=1M-RoQcmdEi9EWH-hfB8x_aM5vwaAp8SL&sz=w1200",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "City Lights",
+    "slug": "city-lights",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "",
+    "main": "",
+    "extras": [],
+    "sold": true
+  },
+  {
+    "name": "Pixels",
+    "slug": "pixels",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "Where digital and physical collide — each pixel carrying its own weight of meaning.",
+    "main": "https://drive.google.com/thumbnail?id=1WfSpvW5DwcJLtQdl0xJ3ky_AV8E80-SB&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 1200
+  },
+  {
+    "name": "August",
+    "slug": "august",
+    "size": null,
+    "medium": "Mixed media on canvas",
+    "year": "2024",
+    "description": "The weight of a summer that changed everything.",
+    "main": "https://drive.google.com/thumbnail?id=1eSwEQvnRFmPotK5IbUlBVcIvmlomCyrc&sz=w1200",
+    "extras": [],
+    "sold": false,
+    "price_eur": 1500
+  },
+  {
+    "name": "Broken Mirrors",
+    "slug": "broken-mirrors",
+    "size": "30×30 cm",
+    "medium": "Acrylic on canvas",
+    "year": "2023",
+    "description": "Explores themes of self-reflection and fragmentation, using sharp lines and reflective colors to evoke vulnerability.",
+    "main": "https://drive.google.com/thumbnail?id=14OM0SbHOL_gqg0Clv6CV2LwsSJ2wk97a&sz=w1200",
+    "extras": [],
+    "sold": true
   }
 ];
