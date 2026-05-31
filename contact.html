@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Ghanem Hassan</title>
+  <meta name="description" content="Write to Ghanem Hassan directly — collector inquiries, commissions, gallery collaborations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">GHANEM HASSAN</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="works.html">Works for Sale</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="evolution.html">Artist Evolution</a></li>
+      <li><a href="exhibitions.html">Exhibitions</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header page-header--tall">
+    <p class="section-label">Get in touch</p>
+    <h1 class="page-header__title">Write to Ghanem<br /><em>directly.</em></h1>
+    <p class="page-header__sub">
+      Collector inquiries · Commissions · Gallery collaborations · Press
+    </p>
+  </header>
+
+  <section class="contact-body">
+    <div class="contact-body__inner">
+      <div class="contact-form-wrap">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+          <div class="form-group">
+            <label for="name" class="form-label">Your name</label>
+            <input type="text" id="name" name="name" class="form-input" required placeholder="Name" />
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" id="email" name="email" class="form-input" required placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="subject" class="form-label">I'm writing about</label>
+            <select id="subject" name="subject" class="form-input form-select">
+              <option value="">Select…</option>
+              <option value="collector">A work I'm interested in</option>
+              <option value="commission">A commission</option>
+              <option value="gallery">Gallery / curatorial collaboration</option>
+              <option value="press">Press / media</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-input form-textarea" rows="5" required placeholder="Write freely."></textarea>
+          </div>
+          <button type="submit" class="btn btn--gold btn--full">Send message</button>
+        </form>
+      </div>
+
+      <div class="contact-aside">
+        <div class="contact-aside__block">
+          <p class="contact-aside__label">Studio</p>
+          <p class="contact-aside__value">Milan, Italy</p>
+        </div>
+        <div class="contact-aside__block">
+          <p class="contact-aside__label">Gallery</p>
+          <p class="contact-aside__value">Passepartout Gallery, Milan</p>
+        </div>
+        <div class="contact-aside__block">
+          <p class="contact-aside__label">Instagram</p>
+          <p class="contact-aside__value">
+            <a href="https://instagram.com/ghanemhassan_" target="_blank" rel="noopener">@ghanemhassan_</a>
+          </p>
+        </div>
+        <div class="contact-aside__note">
+          <p>
+            Ghanem reads and responds to every message personally. 
+            He typically replies within a few days.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__name">GHANEM HASSAN</p>
+        <p class="footer__tagline">Contemporary Artist · Milan</p>
+      </div>
+      <div class="footer__links">
+        <a href="works.html">Works for Sale</a>
+        <a href="about.html">About</a>
+        <a href="exhibitions.html">Exhibitions</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://instagram.com/ghanemhassan_" target="_blank" rel="noopener">@ghanemhassan_</a>
+      </div>
+      <p class="footer__copy">© 2024 Ghanem Hassan · ghanemhassan.com</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
