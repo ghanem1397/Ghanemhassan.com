@@ -29,19 +29,14 @@
     <button class="lightbox__close" id="lbClose">✕</button>
     <button class="lightbox__prev" id="lbPrev">‹</button>
     <button class="lightbox__next" id="lbNext">›</button>
-    <div class="lightbox__img-wrap">
-      <img id="lbImg" src="" alt=""/>
-    </div>
+    <div class="lightbox__img-wrap"><img id="lbImg" src="" alt=""/></div>
     <p class="lightbox__counter" id="lbCounter"></p>
   </div>
 
-  <div class="painting-page" id="paintingPage">
-    <!-- Injected by JS -->
-  </div>
+  <div id="paintingPage"></div>
 
-  <!-- RELATED WORKS -->
   <section class="related-works">
-    <div class="section-header" style="padding: 0 3rem 2rem;">
+    <div style="padding:0 3rem 2rem;">
       <p class="section-label">Continue Exploring</p>
       <h2 class="section-title">More Works</h2>
     </div>
@@ -66,136 +61,133 @@
     const params = new URLSearchParams(window.location.search);
     const slug = params.get('slug');
     const painting = PAINTINGS.find(p => p.slug === slug) || PAINTINGS[0];
-    const allImgs = [painting.main, ...(painting.extras || [])];
+    const allImgs = [painting.main, ...(painting.extras||[])].filter(Boolean);
+    const sold = painting.sold || false;
 
-    // Set page title
     document.getElementById('pageTitle').textContent = painting.name + ' — Ghanem Hassan';
 
-    // Render painting page
-    const sold = painting.sold || false;
+    // Price display
+    const priceHTML = sold
+      ? `<p class="pd-sold-note">This work is in a private collection.</p>`
+      : painting.price_eur
+        ? `<div class="pd-price-row"><span class="pd-price-label">Price</span><span class="pd-price">€${painting.price_eur.toLocaleString()}</span></div><p class="pd-price-note">Price excludes shipping and insurance. Installment plans available — enquire directly.</p>`
+        : `<div class="pd-price-row"><span class="pd-price-label">Price</span><span class="pd-price">On request</span></div>`;
+
     document.getElementById('paintingPage').innerHTML = `
-      <div class="painting-layout">
-        <div class="painting-gallery">
-          <!-- Main image -->
-          <div class="gallery-main" id="galleryMain">
-            <img src="${painting.main}" alt="${painting.name}" id="mainImg" onclick="openLightbox(0)"/>
-            <div class="gallery-zoom-hint">Click to enlarge</div>
+      <div class="pd-breadcrumb"><a href="works.html">← All Works</a></div>
+      <div class="pd-layout">
+
+        <!-- LEFT: Gallery -->
+        <div class="pd-gallery">
+          <div class="pd-main-img" id="pdMainImg">
+            <img src="${allImgs[0]||''}" alt="${painting.name}" id="pdImg"/>
+            <button class="pd-zoom-btn" onclick="openLightbox(currentIdx)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </button>
           </div>
-          <!-- Thumbnails -->
           ${allImgs.length > 1 ? `
-          <div class="gallery-thumbs" id="galleryThumbs">
-            ${allImgs.map((img, i) => `
-              <div class="gallery-thumb ${i===0?'active':''}" onclick="switchMain(${i})">
-                <img src="${img}" alt="${painting.name} view ${i+1}" loading="lazy"/>
-              </div>
-            `).join('')}
+          <div class="pd-thumbs" id="pdThumbs">
+            ${allImgs.map((img,i) => `
+              <button class="pd-thumb ${i===0?'active':''}" onclick="switchImg(${i})">
+                <img src="${img}" alt="View ${i+1}" loading="lazy"/>
+              </button>`).join('')}
           </div>` : ''}
         </div>
 
-        <div class="painting-info">
-          <a href="works.html" class="painting-back">← All Works</a>
-          <h1 class="painting-title">${painting.name}</h1>
-          <p class="painting-medium">Mixed media · Diamonds & Emeralds on Canvas</p>
-          <span class="status ${sold ? 'sold' : 'available'}" style="margin-bottom:1.5rem;display:inline-block;">${sold ? 'Sold' : 'Available'}</span>
-
-          <div class="painting-divider"></div>
-
-          ${painting.price && !sold ? `
-          <div class="painting-price-row">
-            <span class="painting-price-label">Price</span>
-            <span class="painting-price">USD ${painting.price.toLocaleString()}</span>
-          </div>
-          <div class="painting-divider"></div>` : ''}
-
-          ${painting.size ? `
-          <div class="painting-spec-row">
-            <span class="painting-spec-label">Dimensions</span>
-            <span class="painting-spec-value">${painting.size}</span>
-          </div>` : ''}
-
-          <div class="painting-spec-row">
-            <span class="painting-spec-label">Medium</span>
-            <span class="painting-spec-value">Mixed media on canvas</span>
-          </div>
-          <div class="painting-spec-row">
-            <span class="painting-spec-label">Materials</span>
-            <span class="painting-spec-value">Diamonds, emeralds, mixed media</span>
-          </div>
-          <div class="painting-spec-row">
-            <span class="painting-spec-label">Artist</span>
-            <span class="painting-spec-value">Ghanem Hassan</span>
-          </div>
-          <div class="painting-spec-row">
-            <span class="painting-spec-label">Origin</span>
-            <span class="painting-spec-value">Milan, Italy</span>
+        <!-- RIGHT: Info -->
+        <div class="pd-info">
+          <div class="pd-status-row">
+            <span class="status ${sold?'sold':'available'}">${sold?'Sold':'Available'}</span>
+            ${painting.year ? `<span class="pd-year">${painting.year}</span>` : ''}
           </div>
 
-          <div class="painting-divider"></div>
+          <h1 class="pd-title">${painting.name}</h1>
+          <p class="pd-medium">${painting.medium || 'Mixed media on canvas'}</p>
+
+          ${painting.description ? `
+          <div class="pd-divider"></div>
+          <p class="pd-desc">${painting.description}</p>` : ''}
+
+          <div class="pd-divider"></div>
+
+          <!-- Specs -->
+          <div class="pd-specs">
+            ${painting.size ? `<div class="pd-spec"><span class="pd-spec-label">Dimensions</span><span class="pd-spec-val">${painting.size}</span></div>` : ''}
+            <div class="pd-spec"><span class="pd-spec-label">Medium</span><span class="pd-spec-val">${painting.medium||'Mixed media on canvas'}</span></div>
+            <div class="pd-spec"><span class="pd-spec-label">Artist</span><span class="pd-spec-val">Ghanem Hassan</span></div>
+            <div class="pd-spec"><span class="pd-spec-label">Studio</span><span class="pd-spec-val">Milan, Italy</span></div>
+            ${painting.year ? `<div class="pd-spec"><span class="pd-spec-label">Year</span><span class="pd-spec-val">${painting.year}</span></div>` : ''}
+            <div class="pd-spec"><span class="pd-spec-label">Provenance</span><span class="pd-spec-val">Direct from artist</span></div>
+          </div>
+
+          <div class="pd-divider"></div>
+
+          <!-- Price + CTA -->
+          ${priceHTML}
 
           ${!sold ? `
-          <p class="painting-cta-note">Interested in this work? Write to Ghanem directly. He responds to every message personally.</p>
-          <a href="contact.html?work=${encodeURIComponent(painting.name)}" class="btn btn--gold" style="width:100%;justify-content:center;margin-bottom:1rem;">Inquire About This Work →</a>
-          <a href="contact.html?type=commission" class="btn btn--outline" style="width:100%;justify-content:center;">Request a Commission</a>
+          <a href="contact.html?work=${encodeURIComponent(painting.name)}" class="btn btn--gold pd-cta">Inquire About This Work →</a>
+          <a href="contact.html?type=commission" class="btn btn--outline pd-cta-sec">Request a Commission</a>
           ` : `
-          <p class="painting-cta-note">This work is in a private collection. Ghanem accepts commissions for works in a similar spirit.</p>
-          <a href="contact.html?type=commission" class="btn btn--gold" style="width:100%;justify-content:center;">Request a Similar Commission →</a>
+          <a href="contact.html?type=commission" class="btn btn--gold pd-cta">Request a Similar Commission →</a>
           `}
 
-          <div class="painting-share">
-            <p class="painting-share-label">Share</p>
-            <a href="https://instagram.com/ghanemhassan_" target="_blank" rel="noopener" class="painting-share-link">Instagram</a>
+          <div class="pd-trust">
+            <div class="pd-trust-item">
+              <span class="pd-trust-icon">◆</span>
+              <span>Certificate of authenticity included</span>
+            </div>
+            <div class="pd-trust-item">
+              <span class="pd-trust-icon">◆</span>
+              <span>Professional packing & worldwide shipping</span>
+            </div>
+            <div class="pd-trust-item">
+              <span class="pd-trust-icon">◆</span>
+              <span>Ghanem responds personally to every inquiry</span>
+            </div>
           </div>
         </div>
+
       </div>
     `;
 
-    // Lightbox logic
-    let lbIndex = 0;
-    function openLightbox(i) {
-      lbIndex = i;
-      document.getElementById('lightbox').classList.add('open');
-      document.body.style.overflow = 'hidden';
-      updateLightbox();
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function updateLightbox() {
-      document.getElementById('lbImg').src = allImgs[lbIndex];
-      document.getElementById('lbCounter').textContent = (lbIndex+1) + ' / ' + allImgs.length;
-    }
-    document.getElementById('lbClose').onclick = closeLightbox;
-    document.getElementById('lbPrev').onclick = () => { lbIndex = (lbIndex - 1 + allImgs.length) % allImgs.length; updateLightbox(); };
-    document.getElementById('lbNext').onclick = () => { lbIndex = (lbIndex + 1) % allImgs.length; updateLightbox(); };
-    document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLightbox(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); if (e.key === 'ArrowLeft') { lbIndex = (lbIndex-1+allImgs.length)%allImgs.length; updateLightbox(); } if (e.key === 'ArrowRight') { lbIndex = (lbIndex+1)%allImgs.length; updateLightbox(); } });
-
-    // Thumbnail switch
-    window.switchMain = function(i) {
-      lbIndex = i;
-      document.getElementById('mainImg').src = allImgs[i];
-      document.getElementById('mainImg').onclick = () => openLightbox(i);
-      document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
+    // Gallery logic
+    let currentIdx = 0;
+    window.switchImg = function(i) {
+      currentIdx = i;
+      document.getElementById('pdImg').src = allImgs[i];
+      document.querySelectorAll('.pd-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
     };
 
-    // Related works (4 random)
-    const related = PAINTINGS.filter(p => p.slug !== slug).sort(() => 0.5 - Math.random()).slice(0, 4);
-    const relGrid = document.getElementById('relatedGrid');
+    // Lightbox
+    function openLightbox(i) {
+      currentIdx = i;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      updateLB();
+    }
+    function updateLB() {
+      document.getElementById('lbImg').src = allImgs[currentIdx];
+      document.getElementById('lbCounter').textContent = allImgs.length > 1 ? (currentIdx+1)+' / '+allImgs.length : '';
+      document.getElementById('lbPrev').style.display = allImgs.length > 1 ? '' : 'none';
+      document.getElementById('lbNext').style.display = allImgs.length > 1 ? '' : 'none';
+    }
+    document.getElementById('lbClose').onclick = () => { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; };
+    document.getElementById('lbPrev').onclick = () => { currentIdx=(currentIdx-1+allImgs.length)%allImgs.length; updateLB(); };
+    document.getElementById('lbNext').onclick = () => { currentIdx=(currentIdx+1)%allImgs.length; updateLB(); };
+    document.getElementById('lightbox').addEventListener('click', e => { if(e.target.id==='lightbox'){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';} });
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
+      if (e.key==='Escape'){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+      if (e.key==='ArrowLeft'){currentIdx=(currentIdx-1+allImgs.length)%allImgs.length;updateLB();}
+      if (e.key==='ArrowRight'){currentIdx=(currentIdx+1)%allImgs.length;updateLB();}
+    });
+
+    // Related
+    const related = PAINTINGS.filter(p=>p.slug!==slug&&p.main).sort(()=>0.5-Math.random()).slice(0,4);
+    const rg = document.getElementById('relatedGrid');
     related.forEach(p => {
-      relGrid.innerHTML += `
-        <article class="wc-card">
-          <a href="painting.html?slug=${p.slug}" class="wc-card__img-wrap">
-            <img src="${p.main}" alt="${p.name}" loading="lazy"/>
-            <div class="wc-card__overlay"><span>View Work →</span></div>
-          </a>
-          <div class="wc-card__info">
-            <div class="wc-card__top"><h3 class="wc-card__title">${p.name}</h3><span class="status ${p.sold?'sold':'available'}">${p.sold?'Sold':'Available'}</span></div>
-            <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
-            <p class="wc-card__price">${p.price ? 'USD '+p.price.toLocaleString() : 'Price on request'}</p>
-            <a href="painting.html?slug=${p.slug}" class="btn btn--gold btn--sm">View →</a>
-          </div>
-        </article>`;
+      rg.innerHTML += `<article class="wc-card"><a href="painting.html?slug=${p.slug}" class="wc-card__img-wrap ${p.sold?'wc-card__img-wrap--sold':''}"><img src="${p.main}" alt="${p.name}" loading="lazy"/><div class="wc-card__overlay"><span>View Work →</span></div>${p.sold?'<div class="wc-card__sold-badge">Sold</div>':''}</a><div class="wc-card__info"><div class="wc-card__top"><h3 class="wc-card__title">${p.name}</h3><span class="status ${p.sold?'sold':'available'}">${p.sold?'Sold':'Available'}</span></div><p class="wc-card__meta">${p.medium||'Mixed media on canvas'}</p><p class="wc-card__price ${p.sold?'wc-card__price--sold':''}">${p.sold?'In a private collection':p.price_eur?'€'+p.price_eur.toLocaleString():'Price on request'}</p><a href="painting.html?slug=${p.slug}" class="btn btn--gold btn--sm">View →</a></div></article>`;
     });
   </script>
 </body>
