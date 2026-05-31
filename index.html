@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ghanem Hassan — Contemporary Artist, Milan</title>
-  <meta name="description" content="Ghanem Hassan is a Lebanese contemporary artist and curator based in Milan. Mixed media on canvas exploring memory, migration, and emotional resilience." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ghanem Hassan — Lebanese Contemporary Artist, Milan</title>
+  <meta name="description" content="Ghanem Hassan is a Lebanese contemporary abstract artist based in Milan. Mixed media paintings with diamonds and emeralds exploring memory, migration, and resilience. Exhibited internationally across Europe, USA, and Asia."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav" id="nav">
     <a href="index.html" class="nav__logo">GHANEM HASSAN</a>
-    <button class="nav__toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span>
-    </button>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span></button>
     <ul class="nav__links" id="navLinks">
       <li><a href="works.html">Works for Sale</a></li>
       <li><a href="about.html">About</a></li>
@@ -30,109 +27,164 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero__bg">
+      <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/72cfdfa2-8f9d-4bd2-a2fd-49848d30dcce.jpg?v=1768308560" alt="" class="hero__bg-img"/>
+      <div class="hero__overlay"></div>
       <div class="hero__grain"></div>
-      <div class="hero__vignette"></div>
     </div>
     <div class="hero__content">
       <p class="hero__sub">Milan · Lebanon · Canvas</p>
-      <h1 class="hero__title">
-        Some things survive<br /><em>the crossing.</em>
-      </h1>
-      <p class="hero__body">
-        Mixed media paintings built from memory,<br />
-        displacement, and what the body refuses to forget.
-      </p>
-      <a href="works.html" class="btn btn--gold">View Available Works</a>
+      <h1 class="hero__title">Some things survive<br/><em>the crossing.</em></h1>
+      <p class="hero__body">Mixed media paintings built from memory, displacement,<br/>and what the body refuses to forget. Diamonds and emeralds<br/>embedded into the canvas — pressure made permanent.</p>
+      <div class="hero__actions">
+        <a href="works.html" class="btn btn--gold">View Available Works</a>
+        <a href="about.html" class="btn btn--ghost">About the Artist</a>
+      </div>
     </div>
-    <div class="hero__scroll">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
-    </div>
+    <div class="hero__scroll"><span>Scroll</span><div class="hero__scroll-line"></div></div>
   </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat"><span class="stat__n">35</span><span class="stat__l">Original Works</span></div>
+    <div class="stat__div"></div>
+    <div class="stat"><span class="stat__n">20+</span><span class="stat__l">Exhibitions</span></div>
+    <div class="stat__div"></div>
+    <div class="stat"><span class="stat__n">4</span><span class="stat__l">Continents</span></div>
+    <div class="stat__div"></div>
+    <div class="stat"><span class="stat__n">2024</span><span class="stat__l">Solo Show, Milan</span></div>
+  </div>
 
   <!-- STATEMENT -->
   <section class="statement">
     <div class="statement__inner">
       <div class="statement__rule"></div>
-      <blockquote class="statement__quote">
-        "The canvas is not a surface. It is an accumulation.<br />
-        Every layer is a year. Every fracture is a crossing."
-      </blockquote>
+      <blockquote class="statement__quote">"The canvas is not a surface. It is an accumulation.<br/>Every layer is a year. Every fracture is a crossing."</blockquote>
       <cite class="statement__cite">— Ghanem Hassan</cite>
     </div>
   </section>
 
   <!-- FEATURED WORKS -->
-  <section class="works-preview" id="works">
+  <section class="works-preview">
     <div class="section-header">
       <p class="section-label">Selected Works</p>
       <h2 class="section-title">Available Originals</h2>
     </div>
     <div class="works-grid">
 
-      <article class="work-card" data-index="01">
-        <div class="work-card__img-wrap">
-          <div class="work-card__placeholder">
-            <span class="work-card__num">01</span>
-          </div>
-          <div class="work-card__overlay">
-            <a href="works.html" class="work-card__cta">View Work →</a>
-          </div>
-        </div>
+      <article class="work-card fade-in">
+        <a href="works.html" class="work-card__img-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/72cfdfa2-8f9d-4bd2-a2fd-49848d30dcce.jpg?v=1768308560" alt="Skin of Silence" loading="lazy"/>
+          <div class="work-card__overlay"><span>View Work →</span></div>
+        </a>
         <div class="work-card__info">
           <h3 class="work-card__title">Skin of Silence</h3>
-          <p class="work-card__year">2024 · Mixed media on canvas</p>
-          <p class="work-card__desc">A grid fractured by a diagonal wound — each cell holding its own quiet weight. What survives displacement. What hardens into silence.</p>
+          <p class="work-card__year">Mixed media · Diamonds & Emeralds on Canvas</p>
+          <p class="work-card__desc">A grid fractured by a diagonal wound. Each cell holds its own quiet weight. What survives displacement. What hardens into silence.</p>
           <div class="work-card__footer">
-            <span class="work-card__status available">Available</span>
-            <a href="contact.html" class="work-card__inquire">Inquire →</a>
+            <span class="status available">Available</span>
+            <span class="work-card__price">USD 26,500</span>
           </div>
         </div>
       </article>
 
-      <article class="work-card" data-index="02">
-        <div class="work-card__img-wrap">
-          <div class="work-card__placeholder" style="background: linear-gradient(135deg, #1a1208 0%, #2d2210 60%, #0d0d0d 100%);">
-            <span class="work-card__num">02</span>
-          </div>
-          <div class="work-card__overlay">
-            <a href="works.html" class="work-card__cta">View Work →</a>
-          </div>
-        </div>
+      <article class="work-card fade-in">
+        <a href="works.html" class="work-card__img-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/d4d3960a-ec28-40ba-94c0-c49b265fcb99.jpg?v=1768308534" alt="Script of the Displaced" loading="lazy"/>
+          <div class="work-card__overlay"><span>View Work →</span></div>
+        </a>
         <div class="work-card__info">
-          <h3 class="work-card__title">Untitled I</h3>
-          <p class="work-card__year">2024 · Mixed media on canvas</p>
-          <p class="work-card__desc">Dense layered surface threaded with gold. Calcified wounds becoming structure. The decision to stay — held in material form.</p>
+          <h3 class="work-card__title">Script of the Displaced</h3>
+          <p class="work-card__year">Mixed media · Diamonds & Emeralds on Canvas</p>
+          <p class="work-card__desc">The language that forms when words fail. Every mark is a sentence that could not be spoken in the country left behind.</p>
           <div class="work-card__footer">
-            <span class="work-card__status available">Available</span>
-            <a href="contact.html" class="work-card__inquire">Inquire →</a>
+            <span class="status available">Available</span>
+            <span class="work-card__price">USD 18,300</span>
           </div>
         </div>
       </article>
 
-      <article class="work-card" data-index="03">
-        <div class="work-card__img-wrap">
-          <div class="work-card__placeholder" style="background: linear-gradient(160deg, #0a0f0a 0%, #111a11 50%, #0d0d0d 100%);">
-            <span class="work-card__num">03</span>
-          </div>
-          <div class="work-card__overlay">
-            <a href="works.html" class="work-card__cta">View Work →</a>
+      <article class="work-card fade-in">
+        <a href="works.html" class="work-card__img-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/0cdf087b-93db-42c7-b124-5d745946d496.jpg?v=1768308812" alt="The Will to Rebuild" loading="lazy"/>
+          <div class="work-card__overlay"><span>View Work →</span></div>
+        </a>
+        <div class="work-card__info">
+          <h3 class="work-card__title">The Will to Rebuild</h3>
+          <p class="work-card__year">Mixed media · Diamonds & Emeralds on Canvas</p>
+          <p class="work-card__desc">Not hope — something harder. The decision made quietly, without witnesses, to begin again from what remains.</p>
+          <div class="work-card__footer">
+            <span class="status available">Available</span>
+            <span class="work-card__price">USD 16,100</span>
           </div>
         </div>
+      </article>
+
+      <article class="work-card fade-in">
+        <a href="works.html" class="work-card__img-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/f94c72a1-de47-4def-8821-2b961dd2eb27.jpg?v=1768308671" alt="The Hearth of Sacrifice" loading="lazy"/>
+          <div class="work-card__overlay"><span>View Work →</span></div>
+        </a>
         <div class="work-card__info">
-          <h3 class="work-card__title">The Weight</h3>
-          <p class="work-card__year">2024 · Mixed media on canvas</p>
-          <p class="work-card__desc">Heavy texture. Geological layers. The language the body speaks when the mind goes quiet — three years becoming a city.</p>
+          <h3 class="work-card__title">The Hearth of Sacrifice</h3>
+          <p class="work-card__year">Mixed media · Diamonds & Emeralds on Canvas</p>
+          <p class="work-card__desc">What is given up to become someone new. The fire that destroys and the warmth that remains after.</p>
           <div class="work-card__footer">
-            <span class="work-card__status available">Available</span>
-            <a href="contact.html" class="work-card__inquire">Inquire →</a>
+            <span class="status available">Available</span>
+            <span class="work-card__price">USD 9,600</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card fade-in">
+        <a href="works.html" class="work-card__img-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/Ghanem-Hassan-Winds_20of_20Change_20241210183315482_01f79656-a494-456c-b616-ab3fc2cbebfc.jpg?v=1733991581" alt="Winds of Change" loading="lazy"/>
+          <div class="work-card__overlay"><span>View Work →</span></div>
+        </a>
+        <div class="work-card__info">
+          <h3 class="work-card__title">Winds of Change</h3>
+          <p class="work-card__year">Mixed media · Diamonds & Emeralds on Canvas</p>
+          <p class="work-card__desc">The force that cannot be stopped. Movement recorded in material — a surface that remembers every direction it was pushed.</p>
+          <div class="work-card__footer">
+            <span class="status available">Available</span>
+            <span class="work-card__price">USD 8,600</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card fade-in">
+        <a href="works.html" class="work-card__img-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/WhatsApp_Image_2025-03-30_at_12.40.11_PM.jpg?v=1743317072" alt="Egypt" loading="lazy"/>
+          <div class="work-card__overlay"><span>View Work →</span></div>
+        </a>
+        <div class="work-card__info">
+          <h3 class="work-card__title">Egypt</h3>
+          <p class="work-card__year">Mixed media · Diamonds & Emeralds on Canvas</p>
+          <p class="work-card__desc">A civilization's silence. Ancient weight compressed into a single surface — what endures when empires become dust.</p>
+          <div class="work-card__footer">
+            <span class="status available">Available</span>
+            <span class="work-card__price">USD 4,000</span>
           </div>
         </div>
       </article>
 
     </div>
     <div class="section-footer">
-      <a href="works.html" class="btn btn--outline">All Available Works</a>
+      <a href="works.html" class="btn btn--outline">View All 35 Works →</a>
+    </div>
+  </section>
+
+  <!-- DIAMONDS STRIP -->
+  <section class="diamonds-strip">
+    <div class="diamonds-strip__inner">
+      <div class="diamonds-strip__text">
+        <p class="section-label">The Material</p>
+        <h2 class="diamonds-strip__title">Diamonds. Emeralds.<br/>Pressed into the surface.</h2>
+        <p class="diamonds-strip__body">These are not decorative elements. In Hassan's work, precious stones are embedded directly into the canvas — representing endurance under pressure, the crystallization of lived experience, and the value that only emerges through fracture. Each stone is placed by hand. Each placement is a decision.</p>
+      </div>
+      <div class="diamonds-strip__accent">
+        <div class="diamonds-strip__gem">◆</div>
+        <p class="diamonds-strip__gem-label">Conflict becomes crystal.<br/>Pressure becomes permanence.</p>
+      </div>
     </div>
   </section>
 
@@ -140,22 +192,30 @@
   <section class="about-strip">
     <div class="about-strip__text">
       <p class="section-label">The Artist</p>
-      <h2 class="about-strip__title">Born in Lebanon.<br />Built in Milan.</h2>
-      <p class="about-strip__body">
-        Ghanem Hassan left finance — two master's degrees, a different life — 
-        and returned to what the body already knew. His canvases are not painted. 
-        They are built. Layer by layer, by hand, until the surface carries 
-        the same weight as the memory.
-      </p>
+      <h2 class="about-strip__title">Born in Lebanon.<br/>Built in Milan.</h2>
+      <p class="about-strip__body">Ghanem Hassan left finance — two master's degrees, a different life — and returned to what the body already knew. His canvases are not painted. They are built. Layer by layer, by hand, until the surface carries the same weight as the memory. Diamonds and emeralds embedded throughout — pressure transformed into permanence.</p>
       <a href="about.html" class="btn btn--text">Read the full story →</a>
     </div>
     <div class="about-strip__accent">
-      <div class="about-strip__line"></div>
-      <p class="about-strip__stat">Passepartout Gallery</p>
-      <p class="about-strip__stat">Unfolding Visions</p>
-      <p class="about-strip__stat">Sartorio Collaboration</p>
-      <p class="about-strip__stat">Milan · International</p>
+      <img src="https://cdn.shopify.com/s/files/1/0853/2652/8801/files/Ghanem_Hassan_Artist.jpg?v=1768261165" alt="Ghanem Hassan" class="about-strip__portrait"/>
     </div>
+  </section>
+
+  <!-- EXHIBITIONS PREVIEW -->
+  <section class="exh-preview">
+    <div class="section-header">
+      <p class="section-label">Exhibition Record</p>
+      <h2 class="section-title">Shown Internationally</h2>
+    </div>
+    <div class="exh-grid">
+      <div class="exh-item"><span class="exh-item__year">2024</span><span class="exh-item__name">Unfolding Visions</span><span class="exh-item__loc">Solo · Milan</span></div>
+      <div class="exh-item"><span class="exh-item__year">2024</span><span class="exh-item__name">Salone del Mobile</span><span class="exh-item__loc">Sartorio × TheGeeArt · Milan</span></div>
+      <div class="exh-item"><span class="exh-item__year">2024</span><span class="exh-item__name">Art on Loop</span><span class="exh-item__loc">The Holy Art Gallery · New York</span></div>
+      <div class="exh-item"><span class="exh-item__year">2024</span><span class="exh-item__name">Art on Loop</span><span class="exh-item__loc">The Holy Art Gallery · London</span></div>
+      <div class="exh-item"><span class="exh-item__year">2024</span><span class="exh-item__name">Milano Art & Fashion Week</span><span class="exh-item__loc">Passepartout Gallery · Milan</span></div>
+      <div class="exh-item"><span class="exh-item__year">Permanent</span><span class="exh-item__name">Passepartout Gallery</span><span class="exh-item__loc">Milan, Italy</span></div>
+    </div>
+    <div class="section-footer"><a href="exhibitions.html" class="btn btn--text">Full exhibition history →</a></div>
   </section>
 
   <!-- EMAIL CAPTURE -->
@@ -163,15 +223,14 @@
     <div class="email-capture__inner">
       <p class="section-label">Stay close</p>
       <h2 class="email-capture__title">New works, straight to your inbox.</h2>
-      <p class="email-capture__body">Be the first to see new paintings before they are listed publicly.</p>
+      <p class="email-capture__body">Be the first to see new paintings before they are listed publicly. Ghanem releases new works periodically — collectors who subscribe get first access.</p>
       <div class="email-capture__form">
-        <input type="email" placeholder="your@email.com" class="email-capture__input" />
+        <input type="email" placeholder="your@email.com" class="email-capture__input"/>
         <button class="btn btn--gold email-capture__btn">Notify me</button>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__brand">
@@ -185,7 +244,7 @@
         <a href="contact.html">Contact</a>
         <a href="https://instagram.com/ghanemhassan_" target="_blank" rel="noopener">@ghanemhassan_</a>
       </div>
-      <p class="footer__copy">© 2024 Ghanem Hassan · ghanemhassan.com</p>
+      <p class="footer__copy">© 2025 Ghanem Hassan · ghanemhassan.com</p>
     </div>
   </footer>
 
