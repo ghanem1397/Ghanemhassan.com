@@ -1,0 +1,8 @@
+{
+  "name": "ghanemhassan-website",
+  "version": "1.0.0",
+  "description": "Ghanem Hassan — Contemporary Artist, Milan",
+  "scripts": {
+    "build": "echo Static site, no build needed"
+  }
+}
