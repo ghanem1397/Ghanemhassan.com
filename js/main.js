@@ -76,3 +76,21 @@ if (captureBtn && captureInput) {
     captureBtn.disabled = true;
   });
 }
+
+// === WORKS FILTER ===
+const filterBtns = document.querySelectorAll('.filter-btn');
+const wcCards = document.querySelectorAll('.wc-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    wcCards.forEach(card => {
+      if (f === 'all' || card.dataset.status === f) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
