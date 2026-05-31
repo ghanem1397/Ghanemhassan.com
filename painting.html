@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="pageTitle">Painting — Ghanem Hassan</title>
+  <meta name="description" content="Original painting by Ghanem Hassan. Mixed media on canvas with diamonds and emeralds."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">GHANEM HASSAN</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span></button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="works.html">Works</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="evolution.html">Artist Evolution</a></li>
+      <li><a href="exhibitions.html">Exhibitions</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lbClose">✕</button>
+    <button class="lightbox__prev" id="lbPrev">‹</button>
+    <button class="lightbox__next" id="lbNext">›</button>
+    <div class="lightbox__img-wrap">
+      <img id="lbImg" src="" alt=""/>
+    </div>
+    <p class="lightbox__counter" id="lbCounter"></p>
+  </div>
+
+  <div class="painting-page" id="paintingPage">
+    <!-- Injected by JS -->
+  </div>
+
+  <!-- RELATED WORKS -->
+  <section class="related-works">
+    <div class="section-header" style="padding: 0 3rem 2rem;">
+      <p class="section-label">Continue Exploring</p>
+      <h2 class="section-title">More Works</h2>
+    </div>
+    <div class="works-catalog" id="relatedGrid" style="padding-top:0;"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand"><p class="footer__name">GHANEM HASSAN</p><p class="footer__tagline">Contemporary Artist · Milan</p></div>
+      <div class="footer__links">
+        <a href="works.html">Works</a><a href="about.html">About</a>
+        <a href="exhibitions.html">Exhibitions</a><a href="contact.html">Contact</a>
+        <a href="https://instagram.com/ghanemhassan_" target="_blank" rel="noopener">@ghanemhassan_</a>
+      </div>
+      <p class="footer__copy">© 2025 Ghanem Hassan · ghanemhassan.com</p>
+    </div>
+  </footer>
+
+  <script src="js/paintings.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
+    const painting = PAINTINGS.find(p => p.slug === slug) || PAINTINGS[0];
+    const allImgs = [painting.main, ...(painting.extras || [])];
+
+    // Set page title
+    document.getElementById('pageTitle').textContent = painting.name + ' — Ghanem Hassan';
+
+    // Render painting page
+    const sold = painting.sold || false;
+    document.getElementById('paintingPage').innerHTML = `
+      <div class="painting-layout">
+        <div class="painting-gallery">
+          <!-- Main image -->
+          <div class="gallery-main" id="galleryMain">
+            <img src="${painting.main}" alt="${painting.name}" id="mainImg" onclick="openLightbox(0)"/>
+            <div class="gallery-zoom-hint">Click to enlarge</div>
+          </div>
+          <!-- Thumbnails -->
+          ${allImgs.length > 1 ? `
+          <div class="gallery-thumbs" id="galleryThumbs">
+            ${allImgs.map((img, i) => `
+              <div class="gallery-thumb ${i===0?'active':''}" onclick="switchMain(${i})">
+                <img src="${img}" alt="${painting.name} view ${i+1}" loading="lazy"/>
+              </div>
+            `).join('')}
+          </div>` : ''}
+        </div>
+
+        <div class="painting-info">
+          <a href="works.html" class="painting-back">← All Works</a>
+          <h1 class="painting-title">${painting.name}</h1>
+          <p class="painting-medium">Mixed media · Diamonds & Emeralds on Canvas</p>
+          <span class="status ${sold ? 'sold' : 'available'}" style="margin-bottom:1.5rem;display:inline-block;">${sold ? 'Sold' : 'Available'}</span>
+
+          <div class="painting-divider"></div>
+
+          ${painting.price && !sold ? `
+          <div class="painting-price-row">
+            <span class="painting-price-label">Price</span>
+            <span class="painting-price">USD ${painting.price.toLocaleString()}</span>
+          </div>
+          <div class="painting-divider"></div>` : ''}
+
+          ${painting.size ? `
+          <div class="painting-spec-row">
+            <span class="painting-spec-label">Dimensions</span>
+            <span class="painting-spec-value">${painting.size}</span>
+          </div>` : ''}
+
+          <div class="painting-spec-row">
+            <span class="painting-spec-label">Medium</span>
+            <span class="painting-spec-value">Mixed media on canvas</span>
+          </div>
+          <div class="painting-spec-row">
+            <span class="painting-spec-label">Materials</span>
+            <span class="painting-spec-value">Diamonds, emeralds, mixed media</span>
+          </div>
+          <div class="painting-spec-row">
+            <span class="painting-spec-label">Artist</span>
+            <span class="painting-spec-value">Ghanem Hassan</span>
+          </div>
+          <div class="painting-spec-row">
+            <span class="painting-spec-label">Origin</span>
+            <span class="painting-spec-value">Milan, Italy</span>
+          </div>
+
+          <div class="painting-divider"></div>
+
+          ${!sold ? `
+          <p class="painting-cta-note">Interested in this work? Write to Ghanem directly. He responds to every message personally.</p>
+          <a href="contact.html?work=${encodeURIComponent(painting.name)}" class="btn btn--gold" style="width:100%;justify-content:center;margin-bottom:1rem;">Inquire About This Work →</a>
+          <a href="contact.html?type=commission" class="btn btn--outline" style="width:100%;justify-content:center;">Request a Commission</a>
+          ` : `
+          <p class="painting-cta-note">This work is in a private collection. Ghanem accepts commissions for works in a similar spirit.</p>
+          <a href="contact.html?type=commission" class="btn btn--gold" style="width:100%;justify-content:center;">Request a Similar Commission →</a>
+          `}
+
+          <div class="painting-share">
+            <p class="painting-share-label">Share</p>
+            <a href="https://instagram.com/ghanemhassan_" target="_blank" rel="noopener" class="painting-share-link">Instagram</a>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Lightbox logic
+    let lbIndex = 0;
+    function openLightbox(i) {
+      lbIndex = i;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      updateLightbox();
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function updateLightbox() {
+      document.getElementById('lbImg').src = allImgs[lbIndex];
+      document.getElementById('lbCounter').textContent = (lbIndex+1) + ' / ' + allImgs.length;
+    }
+    document.getElementById('lbClose').onclick = closeLightbox;
+    document.getElementById('lbPrev').onclick = () => { lbIndex = (lbIndex - 1 + allImgs.length) % allImgs.length; updateLightbox(); };
+    document.getElementById('lbNext').onclick = () => { lbIndex = (lbIndex + 1) % allImgs.length; updateLightbox(); };
+    document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); if (e.key === 'ArrowLeft') { lbIndex = (lbIndex-1+allImgs.length)%allImgs.length; updateLightbox(); } if (e.key === 'ArrowRight') { lbIndex = (lbIndex+1)%allImgs.length; updateLightbox(); } });
+
+    // Thumbnail switch
+    window.switchMain = function(i) {
+      lbIndex = i;
+      document.getElementById('mainImg').src = allImgs[i];
+      document.getElementById('mainImg').onclick = () => openLightbox(i);
+      document.querySelectorAll('.gallery-thumb').forEach((t,j) => t.classList.toggle('active', j===i));
+    };
+
+    // Related works (4 random)
+    const related = PAINTINGS.filter(p => p.slug !== slug).sort(() => 0.5 - Math.random()).slice(0, 4);
+    const relGrid = document.getElementById('relatedGrid');
+    related.forEach(p => {
+      relGrid.innerHTML += `
+        <article class="wc-card">
+          <a href="painting.html?slug=${p.slug}" class="wc-card__img-wrap">
+            <img src="${p.main}" alt="${p.name}" loading="lazy"/>
+            <div class="wc-card__overlay"><span>View Work →</span></div>
+          </a>
+          <div class="wc-card__info">
+            <div class="wc-card__top"><h3 class="wc-card__title">${p.name}</h3><span class="status ${p.sold?'sold':'available'}">${p.sold?'Sold':'Available'}</span></div>
+            <p class="wc-card__meta">Mixed media · Diamonds & Emeralds on Canvas</p>
+            <p class="wc-card__price">${p.price ? 'USD '+p.price.toLocaleString() : 'Price on request'}</p>
+            <a href="painting.html?slug=${p.slug}" class="btn btn--gold btn--sm">View →</a>
+          </div>
+        </article>`;
+    });
+  </script>
+</body>
+</html>
